@@ -1,0 +1,12 @@
+{
+  "name": "@becas/worker",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src test",
+    "start": "node dist/main.js",
+    "test": "pnpm build && jest --runInBand"
+  }
+}

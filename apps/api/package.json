@@ -1,0 +1,24 @@
+{
+  "name": "@becas/api",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src test",
+    "start": "node dist/main.js",
+    "test": "pnpm build && jest --runInBand",
+    "test:integration": "pnpm test --testPathPatterns=http"
+  },
+  "dependencies": {
+    "@nestjs/common": "11.1.17",
+    "@nestjs/core": "11.1.17",
+    "@nestjs/platform-express": "11.1.17",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2"
+  },
+  "devDependencies": {
+    "supertest": "7.1.4",
+    "@types/express": "5.0.6"
+  }
+}

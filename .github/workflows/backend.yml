@@ -1,0 +1,25 @@
+name: Backend
+on: [push, pull_request]
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - uses: pnpm/action-setup@v4
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @becas/api --filter @becas/worker lint
+      - run: pnpm --filter @becas/api --filter @becas/worker typecheck
+      - run: pnpm format:check
+      - run: pnpm --filter @becas/api --filter @becas/worker test
+      - run: docker compose -f infra/compose.yaml up -d --wait
+        env:
+          POSTGRES_PASSWORD: ephemeral-ci-dev
+          POSTGRES_TEST_PASSWORD: ephemeral-ci-test
+      - run: docker compose -f infra/compose.yaml exec -T db-test psql -U becas_test -d becas_test -c 'SELECT 1'
+        env:
+          POSTGRES_PASSWORD: ephemeral-ci-dev
+          POSTGRES_TEST_PASSWORD: ephemeral-ci-test
+      - run: pnpm contracts:validate
