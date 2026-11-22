@@ -18,10 +18,6 @@
     "excerpt": "Applications for 2027-2028 Chevening Scholarships are now closed.",
     "pageNumber": null
   },
-  "levels": [
-    "MASTER"
-  ],
-  "countries": [
-    "GB"
-  ]
+  "levels": ["MASTER"],
+  "countries": ["GB"]
 }
