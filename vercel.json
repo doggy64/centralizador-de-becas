@@ -4,7 +4,8 @@
     "api": {
       "root": "apps/api",
       "framework": "nestjs",
-      "buildCommand": "pnpm --filter @becas/api db:generate && pnpm --filter @becas/api build"
+      "installCommand": "cd ../.. && pnpm install --frozen-lockfile",
+      "buildCommand": "cd ../.. && pnpm --filter @becas/api db:generate && pnpm --filter @becas/api build"
     },
     "web": {
       "root": "apps/web",
