@@ -8,5 +8,13 @@
     "lint": "eslint src test",
     "start": "node dist/main.js",
     "test": "pnpm build && jest --runInBand"
+  },
+  "dependencies": {
+    "@prisma/client": "6.19.3",
+    "zod": "3.25.76",
+    "cheerio": "1.1.2",
+    "@crawlee/core": "3.15.3",
+    "ipaddr.js": "2.3.0",
+    "robots-parser": "3.0.1"
   }
 }

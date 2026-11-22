@@ -1,0 +1,199 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Editorial {
+  DRAFT
+  IN_REVIEW
+  PUBLISHED
+  REJECTED
+  RETIRED
+}
+
+enum Modality {
+  ON_SITE
+  ONLINE
+  HYBRID
+  UNKNOWN
+}
+
+enum Coverage {
+  FULL
+  PARTIAL
+  UNKNOWN
+}
+
+model Institution {
+  id         String    @id
+  name       String
+  websiteUrl String?
+  programs   Program[]
+}
+
+model Program {
+  id            String        @id @default(cuid())
+  key           String
+  name          String
+  institutionId String
+  institution   Institution   @relation(fields: [institutionId], references: [id])
+  calls         Scholarship[]
+
+  @@unique([institutionId, key])
+}
+
+model Source {
+  host         String         @id
+  title        String
+  officialUrl  String
+  approved     Boolean        @default(false)
+  crawlAllowed Boolean        @default(false)
+  policyNote   String
+  evidence     Evidence[]
+  calls        Scholarship[]
+  runs         IngestionRun[]
+}
+
+model Scholarship {
+  id                   String          @id @default(cuid())
+  programId            String
+  program              Program         @relation(fields: [programId], references: [id])
+  editionKey           String
+  slug                 String          @unique
+  title                String
+  summary              String
+  sourceHost           String
+  source               Source          @relation(fields: [sourceHost], references: [host])
+  sourceUrl            String
+  status               Editorial       @default(DRAFT)
+  lastVerifiedAt       DateTime?
+  contentHash          String
+  searchText           String
+  startDate            String?
+  deadlineDay          String?
+  deadlineAt           DateTime?
+  originalDeadlineText String?
+  timeZone             String?
+  modality             Modality        @default(UNKNOWN)
+  coverage             Coverage        @default(UNKNOWN)
+  levels               AcademicLevel[]
+  areas                StudyArea[]
+  countries            Country[]
+  requirements         Requirement[]
+  benefits             Benefit[]
+  channels             Channel[]
+  evidence             Evidence[]
+  events               ReviewEvent[]
+
+  @@unique([programId, editionKey])
+  @@index([status, slug])
+  @@index([modality, coverage])
+}
+
+model AcademicLevel {
+  value String        @id
+  label String
+  calls Scholarship[]
+}
+
+model StudyArea {
+  value String        @id
+  label String
+  calls Scholarship[]
+}
+
+model Country {
+  value String        @id
+  label String
+  calls Scholarship[]
+}
+
+model Evidence {
+  id           String        @id @default(cuid())
+  callId       String
+  call         Scholarship   @relation(fields: [callId], references: [id])
+  host         String
+  source       Source        @relation(fields: [host], references: [host])
+  url          String
+  field        String
+  excerpt      String?
+  pageNumber   Int?
+  fingerprint  String
+  capturedAt   DateTime      @default(now())
+  requirements Requirement[]
+  benefits     Benefit[]
+  channels     Channel[]
+
+  @@unique([callId, fingerprint])
+}
+
+model Requirement {
+  id         String      @id @default(cuid())
+  callId     String
+  call       Scholarship @relation(fields: [callId], references: [id])
+  document   Boolean
+  label      String
+  required   Boolean?
+  evidenceId String
+  evidence   Evidence    @relation(fields: [evidenceId], references: [id])
+
+  @@index([callId])
+}
+
+model Benefit {
+  id          String      @id @default(cuid())
+  callId      String
+  call        Scholarship @relation(fields: [callId], references: [id])
+  description String
+  amount      Float?
+  currency    String?
+  evidenceId  String
+  evidence    Evidence    @relation(fields: [evidenceId], references: [id])
+
+  @@index([callId])
+}
+
+model Channel {
+  id           String      @id @default(cuid())
+  callId       String
+  call         Scholarship @relation(fields: [callId], references: [id])
+  type         String
+  purpose      String
+  target       String
+  verification String      @default("PENDING")
+  verifiedAt   DateTime?
+  evidenceId   String
+  evidence     Evidence    @relation(fields: [evidenceId], references: [id])
+
+  @@index([callId])
+}
+
+model ReviewEvent {
+  id     String      @id @default(cuid())
+  callId String
+  call   Scholarship @relation(fields: [callId], references: [id])
+  action String
+  actor  String
+  note   String
+  at     DateTime    @default(now())
+
+  @@index([callId, at])
+}
+
+model IngestionRun {
+  id         String    @id @default(cuid())
+  host       String
+  source     Source    @relation(fields: [host], references: [host])
+  url        String
+  startedAt  DateTime  @default(now())
+  finishedAt DateTime?
+  status     String
+  hash       String?
+  message    String?
+
+  @@index([host, startedAt])
+}
