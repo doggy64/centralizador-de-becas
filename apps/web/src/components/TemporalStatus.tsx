@@ -5,5 +5,6 @@ const labels = {
 } satisfies Record<ScholarshipDetail['temporalStatus'], string>;
 
 export default function TemporalStatus({ status }: { status: ScholarshipDetail['temporalStatus'] }) {
-  return <span className="status" data-status={status}>{labels[status]}</span>;
+  const styles = { OPEN: 'open', UPCOMING: 'upcoming', CLOSED: 'closed', TO_CONFIRM: 'tbc' };
+  return <span className={`status status--${styles[status]}`} data-status={status}><i aria-hidden="true" />{labels[status]}</span>;
 }

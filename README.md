@@ -11,6 +11,12 @@ pnpm build
 
 Con el .env de Supabase configurado, ejecute `pnpm start:api`. Compruebe la lectura en http://localhost:3001/api/v1/catalogs/filters. Para ejecutar en contenedores use `docker compose --env-file .env -f infra/services.yaml up -d --build --wait api`.
 
+## Interfaz web
+
+Para desarrollo, configure `API_BASE_URL=http://127.0.0.1:3001` en `apps/web/.env.local`, arranque NestJS y ejecute `pnpm --filter @becas/web dev` desde la raíz. Abra `http://localhost:3000` para explorar el catálogo. La foto, el icono y los estilos forman parte de la aplicación Next.js.
+
+La consola en `/operadores` crea búsquedas y consulta su informe por ID. En el entorno del servidor web, configure `OPERATOR_PASSWORD` como contraseña de la consola y `SEARCH_ADMIN_TOKEN` con el valor usado por NestJS. Al solicitarlo el navegador, use el usuario `operador` y la contraseña de la consola. Next.js envía el token a NestJS desde el servidor. Sirva la consola mediante HTTPS fuera de localhost. El worker debe estar activo para procesar trabajos. Las vistas de fuentes, ingesta y revisión en `/operadores/editorial/fuentes` son una demostración local.
+
 ## Demo y pruebas
 
 Para preparar una ficha sintética de desarrollo y arrancar la API, configure `TEST_DATABASE_URL` local con una base cuyo nombre termine en `_test`, luego ejecute `pnpm demo:prepare` y `pnpm demo:start`. La API escucha por defecto en http://localhost:3001. GET /health responde con {"status":"ok"}. El detalle de demostración está disponible en `/api/v1/scholarships/programa-de-prueba-edicion-2027-1`.

@@ -11,6 +11,8 @@ test('MVP-029 y MVP-030 mantienen foco y navegación por teclado', async ({ page
   await expect(catalogLink).toBeFocused();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/\/becas$/);
+  const toggle = page.getByRole('button', { name: 'Filtros', exact: true });
+  if (await toggle.isVisible()) await toggle.click();
   await expect(page.getByRole('form', { name: 'Filtros de becas' })).toBeVisible();
 });
 

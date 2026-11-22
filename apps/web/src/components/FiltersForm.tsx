@@ -20,7 +20,7 @@ function firstValue(filters: SearchParams, key: FilterKey): string {
   return Array.isArray(value) ? value[0] ?? '' : value ?? '';
 }
 
-export default function FiltersForm({ catalogs, filters }: { catalogs: FilterCatalog; filters: SearchParams }) {
+export default function FiltersForm({ catalogs, filters, onApply }: { catalogs: FilterCatalog; filters: SearchParams; onApply?: () => void }) {
   const router = useRouter();
   const query = filters.q;
   const q = Array.isArray(query) ? query[0] : query;
@@ -31,21 +31,23 @@ export default function FiltersForm({ catalogs, filters }: { catalogs: FilterCat
     for (const [key, value] of new FormData(event.currentTarget).entries()) {
       if (typeof value === 'string' && value.trim()) parameters.set(key, value.trim());
     }
+    onApply?.();
     router.push(`/becas${parameters.size ? `?${parameters.toString()}` : ''}`);
   }
 
   return <form className="filters" method="get" action="/becas" aria-label="Filtros de becas" onSubmit={applyFilters}>
     {q ? <input type="hidden" name="q" value={q} /> : null}
+    {filters.limit && <input type="hidden" name="limit" value={Array.isArray(filters.limit) ? filters.limit[0] : filters.limit} />}
     <fieldset>
-      <legend>Filtrar convocatorias</legend>
-      <div className="filter-grid">{definitions.map(({ key, label, catalog }) => <label key={key}>
-        {label}
+      <legend className="visually-hidden">Filtrar convocatorias</legend>
+      <div className="filter-fields">{definitions.map(({ key, label, catalog }) => <label key={key}>
+        <span>{label}</span>
         <select name={key} defaultValue={firstValue(filters, key)}>
           <option value="">Todos</option>
           {catalogs[catalog].map(option => <option key={option.value} value={option.value}>{option.label}</option>)}
         </select>
       </label>)}</div>
-      <button type="submit">Aplicar filtros</button>
+      <button className="apply-filters" type="submit">Aplicar filtros</button>
     </fieldset>
   </form>;
 }

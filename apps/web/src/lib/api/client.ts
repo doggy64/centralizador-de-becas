@@ -14,7 +14,7 @@ export class ScholarshipApiError extends Error {
   }
 }
 
-function getApiBaseUrl(): string {
+export function getApiBaseUrl(): string {
   const configured = process.env.API_BASE_URL;
   if (configured) {
     const url = new URL(configured);

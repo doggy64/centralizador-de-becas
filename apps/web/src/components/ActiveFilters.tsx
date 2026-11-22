@@ -27,13 +27,13 @@ export default function ActiveFilters({ catalogs: options, filters }: { catalogs
   if (!entries.length) return null;
 
   return <section className="active-filters" aria-label="Filtros aplicados">
-    <h2>Filtros aplicados</h2>
+    <h2 className="visually-hidden">Filtros aplicados</h2>
     <ul>{entries.map(([key, raw]) => {
       const value = valueOf(raw) as string;
       const catalog = catalogs[key];
       const displayed = catalog ? options[catalog].find(option => option.value === value)?.label ?? value : value;
-      return <li key={key}><Link href={hrefWithout(filters, key)}>Quitar {labels[key]}: {displayed}</Link></li>;
+      return <li key={key}><Link className="chip" aria-label={`Quitar ${labels[key]}: ${displayed}`} href={hrefWithout(filters, key)}>{labels[key]}: {displayed} <b aria-hidden="true">×</b></Link></li>;
     })}</ul>
-    <Link href="/becas">Limpiar filtros</Link>
+    <Link className="clear-filters" href="/becas">Limpiar filtros</Link>
   </section>;
 }

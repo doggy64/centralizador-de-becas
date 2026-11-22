@@ -5,6 +5,7 @@ test('MVP-003 muestra datos de catálogo y plazos originales sin inventar fechas
   const engineering = page.getByRole('listitem').filter({ hasText: 'Beca ficticia para Ingeniería' });
   await expect(engineering.getByText('Bolivia', { exact: true })).toBeVisible();
   await expect(engineering.getByText('Maestría', { exact: true })).toBeVisible();
+  await expect(engineering.getByText('Abierta', { exact: true })).toBeVisible();
   await expect(engineering.getByText('31 de diciembre de 2027 (fecha ficticia)', { exact: true })).toBeVisible();
   const medicine = page.getByRole('listitem').filter({ hasText: 'Beca ficticia de Medicina' });
   await expect(medicine.locator('dd').last()).toHaveText('Por confirmar');

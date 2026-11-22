@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import type { ReactNode } from 'react';
 import './styles.css';
 
@@ -8,13 +7,8 @@ export const metadata = {
 };
 
 export default function Layout({ children }: { children: ReactNode }) {
-  return <html lang="es"><body>
-    <a className="skip" href="#contenido">Saltar al contenido</a>
-    <header><nav aria-label="Principal">
-      <Link className="brand" href="/">Centralizador de Becas</Link>
-      <Link href="/becas">Catálogo</Link>
-    </nav></header>
-    <main id="contenido" tabIndex={-1}>{children}</main>
-    <footer>Centralizador de Becas</footer>
+  return <html lang="es" data-scroll-behavior="smooth"><body>
+    <a className="skip-link" href="#contenido">Saltar al contenido</a>
+    {children}
   </body></html>;
 }

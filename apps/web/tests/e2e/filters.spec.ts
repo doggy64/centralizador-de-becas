@@ -11,6 +11,8 @@ const filters = [
 for (const [key, value, expected] of filters) {
   test(`filtra por ${key}`, async ({ page }) => {
     await page.goto('/becas');
+    const toggle = page.getByRole('button', { name: 'Filtros', exact: true });
+    if (await toggle.isVisible()) await toggle.click();
     const form = page.getByRole('form', { name: 'Filtros de becas' });
     await form.getByRole('combobox', { name: new RegExp(key === 'level' ? 'Nivel académico' : key === 'area' ? 'Área de estudio' : key === 'country' ? 'País de destino' : key === 'modality' ? 'Modalidad' : 'Cobertura') }).selectOption(value);
     await form.getByRole('button', { name: 'Aplicar filtros' }).click();
@@ -22,6 +24,8 @@ for (const [key, value, expected] of filters) {
 
 test('mantiene el texto al filtrar y no desborda a 360 px', async ({ page }, info) => {
   await page.goto('/becas?q=prueba');
+  const toggle = page.getByRole('button', { name: 'Filtros', exact: true });
+  if (await toggle.isVisible()) await toggle.click();
   const form = page.getByRole('form', { name: 'Filtros de becas' });
   await form.getByRole('combobox', { name: 'Modalidad' }).selectOption('ONLINE');
   await form.getByRole('button', { name: 'Aplicar filtros' }).click();
