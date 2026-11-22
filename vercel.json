@@ -4,8 +4,7 @@
     "api": {
       "root": "apps/api",
       "framework": "nestjs",
-      "buildCommand": "pnpm --filter @becas/api db:generate && pnpm --filter @becas/api build",
-      "startCommand": "node dist/main.js"
+      "buildCommand": "pnpm --filter @becas/api db:generate && pnpm --filter @becas/api build"
     },
     "web": {
       "root": "apps/web",
