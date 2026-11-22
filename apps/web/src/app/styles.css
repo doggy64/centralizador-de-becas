@@ -1,0 +1,33 @@
+:root { color-scheme: light; font-family: "Source Sans 3", system-ui, sans-serif; color: #173f38; background: #faf9f4; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; }
+header { border-bottom: 1px solid #ccd7c9; }
+nav, main, footer { width: min(100% - 2.5rem, 65rem); margin-inline: auto; }
+nav { min-height: 4.75rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.brand { font-weight: 750; text-decoration: none; }
+main { flex: 1; padding-block: clamp(2.5rem, 6vw, 5rem); }
+h1, h2 { font-family: Georgia, serif; font-weight: 500; line-height: 1.08; text-wrap: balance; }
+h1 { font-size: clamp(2.6rem, 6vw, 5.5rem); margin: .3em 0; max-width: 18ch; }
+h2 { font-size: 1.75rem; margin: .3em 0; }
+p { line-height: 1.65; max-width: 62ch; }
+.intro { border-left: .35rem solid #cda44f; padding-left: clamp(1rem, 4vw, 3rem); }
+.intro > p { font-size: 1.2rem; }
+a { color: #13594a; text-underline-offset: .2em; }
+form { margin: 2rem 0; max-width: 38rem; }
+label { display: block; margin-bottom: .5rem; font-weight: 650; }
+.search-row { display: flex; gap: .5rem; }
+input, button, .button { font: inherit; border-radius: .45rem; padding: .8rem 1rem; }
+input { min-width: 0; flex: 1; border: 1px solid #687e70; }
+button, .button { background: #195447; color: white; border: 0; cursor: pointer; }
+.button { display: inline-block; }
+.status { display: inline-block; border-radius: 1rem; background: #e8e8e1; color: #3d4842; padding: .2rem .75rem; font-size: .9rem; }
+.status[data-status="OPEN"] { background: #d9eddf; color: #1c503c; }
+.status[data-status="UPCOMING"] { background: #dae9f2; color: #234c64; }
+.status[data-status="TO_CONFIRM"] { background: #f5e6c8; color: #624820; }
+:focus-visible { outline: 3px solid #96601b; outline-offset: 3px; }
+.skip { position: absolute; top: -5rem; padding: .65rem; background: white; }
+.skip:focus { top: 0; }
+.cards { padding: 0; list-style: none; display: grid; gap: 1rem; }
+.cards li { padding: 1rem 1.5rem; border: 1px solid #ccd7c9; border-radius: .6rem; background: white; }
+footer { border-top: 1px solid #ccd7c9; padding-block: 1.5rem; font-size: .9rem; }
+@media (max-width: 32rem) { .search-row { flex-direction: column; } }
