@@ -4,6 +4,10 @@
 
 Use Node y pnpm fijados en el repositorio. Tras la instalación congelada ejecute `pnpm build`. Instale Python 3.13 y `python -m pip install -r apps/worker/requirements.txt` en un entorno virtual. PYTHON_BIN permite seleccionar su ejecutable. El API solo necesita Node y acceso de lectura a PostgreSQL. El worker usa una cuenta editorial privada y sale a Internet únicamente para las tareas de descubrimiento o verificación autorizadas.
 
+### Supabase
+
+El proyecto Supabase `yunngepighxaigqkzpld` se conecta por su Session Pooler de us-east-1 en el puerto 5432. Copie `.env.supabase.example` a un archivo `.env` privado y reemplace únicamente `REEMPLAZAR_CON_PASSWORD_URL_ENCODED` por la contraseña de PostgreSQL codificada para URL. Aplique las migraciones y semillas con `pnpm build`, `pnpm --filter @becas/api db:migrate` y `pnpm --filter @becas/api db:seed`. La variable DATABASE_URL debe apuntar al pooler de sesión cuando se ejecute Prisma Migrate. Los servicios de contenedor reciben API_DATABASE_URL y WORKER_DATABASE_URL, ambas con la misma URI inicial.
+
 Configure el secreto DATABASE_URL del propietario en el entorno del proceso de migración. Ejecute `pnpm --filter @becas/api db:migrate` y `pnpm --filter @becas/api db:seed`. Las semillas se pueden repetir. Cree logins separados para API y worker, aplique `infra/database/roles.sql` como propietario y otorgue respectivamente los grupos becas_reader y becas_editor. Mantenga el usuario propietario fuera de los procesos públicos. Para ejecutar la API use `pnpm start:api` con la URI de lectura. Para la CLI use DATABASE_URL editorial.
 
 ## Fuentes y revisión
