@@ -2,15 +2,16 @@
 
 ## Estado general
 
-**Contrato API base:** pendiente de aprobación en PR bootstrap.  
-**Entorno:** Next.js autónomo en `apps/web` con el mock HTTP de desarrollo. El monorepo sigue pendiente.
-**Fase actual:** S2, avance frontend autorizado contra mock.
-**Integración:** pendiente de revisión cruzada y ejecución contra la API real.
+**Contrato API base:** OpenAPI 3.0.3 v1.0.0 en `contracts/openapi.yaml`, revisado contra `origin/develop` (`edf4284`).
+**Entorno:** Next.js autónomo en `apps/web` con mock HTTP de desarrollo y modo explícito de E2E real.
+**Fase actual:** S4 frontend implementada; integración real bloqueada por el entorno local.
+**Integración:** DEV2 fusionó su entrega en `develop` (PR #9). El 2026-11-22 no fue posible iniciar PostgreSQL: Docker Desktop no expone `dockerDesktopLinuxEngine`. Además, `pnpm install --frozen-lockfile` no es reproducible para el workspace web desde `develop`; ambos puntos son de propiedad DEV2/root y no se modificaron desde frontend.
 
 | Fecha | Historia | Fase | Estado | Rutas tocadas | Pruebas | Dependencia API | PR |
 |---|---|---|---|---|---|---|---|
 | 2026-11-22 | MVP-001 | S1 | Verificada con mock | apps/web y docs/frontend | Lint, typecheck y build OK. HTTP y parámetros 3/3. Playwright 6/6 | OpenAPI v1 local y mock | [#1](https://github.com/doggy64/centralizador-de-becas/pull/1) |
 | 2026-11-22 | MVP-002 | S1 | Verificada con mock | Inicio, E2E y capturas | Lint, typecheck y build OK. HTTP y parámetros 3/3. Playwright 8/8 | MVP-001 y mock | [PR de MVP-002](https://github.com/doggy64/centralizador-de-becas/pulls?q=head%3Afeat%2Fdev1%2Fs1-MVP-002-inicio) |
+| 2026-11-22 | MVP-032 | S4 | Preparada para integración; bloqueo externo documentado | Playwright, E2E y progreso | Lint, typecheck, test mock 3/3, Playwright mock 44 casos y build OK; Docker no disponible para E2E real | OpenAPI v1 / API DEV2 en `develop` | Pendiente |
 
 ## Revisión inicial del 22 de noviembre
 
@@ -51,8 +52,9 @@ MVP-002 muestra el propósito de la plataforma y permite entrar al catálogo com
 
 ## Bloqueos/solicitudes a DEV 2
 
-- Confirmar OpenAPI v1 y el paquete de generación de tipos.
-- Confirmar nombres de workspace scripts, Node/pnpm y .gitignore para `.env.local`.
+- Habilitar Docker Desktop/Linux engine o proporcionar una API+BD de prueba accesible para ejecutar `E2E_API_BASE_URL=http://127.0.0.1:3001 pnpm --filter @becas/web test:e2e`.
+- Corregir o regenerar el lockfile de `develop` para que `pnpm install --frozen-lockfile` incluya `apps/web`; DEV1 no puede modificarlo.
+- Confirmar el procedimiento de preparación de datos de prueba para la ruta de integración.
 
 ## Protocolo
 
