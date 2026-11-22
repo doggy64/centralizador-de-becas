@@ -19,6 +19,10 @@ legend { font-weight: 650; padding-inline: .35rem; }
 .filters { max-width: 65rem; }
 .filter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 1rem; margin-bottom: 1rem; }
 .filter-grid label { display: grid; gap: .4rem; }
+.active-filters { margin-block: 1.5rem; }
+.active-filters h2 { font-family: inherit; font-size: 1rem; font-weight: 650; }
+.active-filters ul { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; list-style: none; }
+.active-filters li a { display: inline-block; border: 1px solid #8faa96; border-radius: 1rem; padding: .3rem .7rem; background: white; }
 select { min-height: 2.75rem; border: 1px solid #687e70; border-radius: .45rem; padding-inline: .7rem; background: white; font: inherit; }
 label { display: block; margin-bottom: .5rem; font-weight: 650; }
 .search-row { display: flex; gap: .5rem; }

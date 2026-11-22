@@ -4,7 +4,7 @@ import type { FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import type { FilterCatalog, SearchParams } from '../lib/api/scholarships';
 
-type FilterKey = 'level' | 'area' | 'country' | 'modality' | 'coverage';
+type FilterKey = 'level' | 'area' | 'country' | 'modality' | 'coverage' | 'status';
 
 const definitions: Array<{ key: FilterKey; label: string; catalog: keyof FilterCatalog }> = [
   { key: 'level', label: 'Nivel académico', catalog: 'levels' },
@@ -12,6 +12,7 @@ const definitions: Array<{ key: FilterKey; label: string; catalog: keyof FilterC
   { key: 'country', label: 'País de destino', catalog: 'countries' },
   { key: 'modality', label: 'Modalidad', catalog: 'modalities' },
   { key: 'coverage', label: 'Cobertura', catalog: 'coverages' },
+  { key: 'status', label: 'Vigencia', catalog: 'statuses' },
 ];
 
 function firstValue(filters: SearchParams, key: FilterKey): string {
