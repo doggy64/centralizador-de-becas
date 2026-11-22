@@ -21,6 +21,8 @@
 
 ## Evidencia de aceptación frontend
 
+MVP-019, MVP-022 y MVP-023 muestran inicio y cierre con la precisión devuelta por API, la fuente original y la última revisión. Las fechas sin respaldo pasan a «Pendiente de verificación». Lint y typecheck pasaron. Las cuatro pruebas de ficha pasaron en escritorio y móvil. Rama `feat/dev1/s3-MVP-019-022-023-fechas-fuente`.
+
 MVP-018 presenta cobertura y beneficios confirmados por la API. No agrega montos ni condiciones cuando el objeto no los informa. Lint y typecheck pasaron. Las cuatro pruebas Playwright de ficha pasaron en escritorio y móvil. Rama `feat/dev1/s3-MVP-018-beneficios-cobertura`.
 
 MVP-016 y MVP-017 muestran requisitos y documentos en secciones legibles. Cada ausencia llega como «No especificado» sin inferir condiciones de postulación. Lint y typecheck pasaron. Las cuatro pruebas Playwright de la ficha pasaron en escritorio y móvil. Rama `feat/dev1/s3-MVP-016-017-requisitos-documentos`.

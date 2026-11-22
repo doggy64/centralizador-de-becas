@@ -2,6 +2,7 @@ import Link from 'next/link';
 import TemporalStatus from '../../../components/TemporalStatus';
 import RequirementList from '../../../components/RequirementList';
 import BenefitsList from '../../../components/BenefitsList';
+import SourceAndDates from '../../../components/SourceAndDates';
 import { notFound } from 'next/navigation';
 import { getCatalogFilters, getScholarship, type ScholarshipDetail } from '../../../lib/api/scholarships';
 import { ScholarshipApiError } from '../../../lib/api/client';
@@ -44,6 +45,7 @@ export default async function Detail({ params }: { params: Promise<{ slug: strin
     <RequirementList title="Requisitos de elegibilidad" items={scholarship.requirements} />
     <RequirementList title="Documentos requeridos" items={scholarship.requiredDocuments} />
     <BenefitsList benefits={scholarship.benefits} />
+    <SourceAndDates scholarship={scholarship} />
     {href ? <a className="button" href={href} target="_blank" rel="noopener noreferrer">Postular con la institución</a> : <p>Canal de postulación por confirmar.</p>}
   </article>;
 }
