@@ -2,6 +2,7 @@ import Link from 'next/link';
 import SearchForm from '../../components/SearchForm';
 import TemporalStatus from '../../components/TemporalStatus';
 import Pagination from '../../components/Pagination';
+import FiltersForm from '../../components/FiltersForm';
 import { getCatalogFilters, searchScholarships, type SearchParams } from '../../lib/api/scholarships';
 import { ScholarshipApiError } from '../../lib/api/client';
 
@@ -17,6 +18,7 @@ export default async function Catalog({ searchParams }: { searchParams: Promise<
     return <><h1>Búsqueda no válida</h1><p>Revisa los parámetros o vuelve a buscar.</p><SearchForm /></>;
   }
   return <><h1>Catálogo de becas</h1><SearchForm query={query} />
+    <FiltersForm catalogs={catalogs} filters={params} />
     <p role="status">Convocatorias encontradas — {results.meta.total}{results.filters.q ? ` para «${results.filters.q}»` : ''}</p>
     {results.data.length ? <><ul className="cards">{results.data.map(item =>
       <li key={item.id}><p>{item.institution.name}</p>
