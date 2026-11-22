@@ -21,6 +21,8 @@
 
 ## Evidencia de aceptación frontend
 
+MVP-018 presenta cobertura y beneficios confirmados por la API. No agrega montos ni condiciones cuando el objeto no los informa. Lint y typecheck pasaron. Las cuatro pruebas Playwright de ficha pasaron en escritorio y móvil. Rama `feat/dev1/s3-MVP-018-beneficios-cobertura`.
+
 MVP-016 y MVP-017 muestran requisitos y documentos en secciones legibles. Cada ausencia llega como «No especificado» sin inferir condiciones de postulación. Lint y typecheck pasaron. Las cuatro pruebas Playwright de la ficha pasaron en escritorio y móvil. Rama `feat/dev1/s3-MVP-016-017-requisitos-documentos`.
 
 MVP-005, MVP-012 y MVP-013 añaden vigencia desde el estado API, filtros combinables, controles para quitar cada criterio, limpieza de la URL y un estado vacío recuperable. Lint y typecheck pasaron. Las cuatro pruebas Playwright dedicadas pasaron en escritorio y móvil. Rama `feat/dev1/s3-MVP-005-012-013-filtros-activos`.
