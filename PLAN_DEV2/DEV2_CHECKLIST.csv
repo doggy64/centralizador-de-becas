@@ -1,0 +1,17 @@
+﻿Fase,ID,Tarea,Rama sugerida,Dependencias,Entregable,Prueba de aceptación,Coordinación DEV1,Estado
+S0,BOOT,Bootstrap + contrato,chore/bootstrap-contract,0,"OpenAPI, fixtures, base monorepo, health, docker, CI preliminar",API arranca; contrato valida; DEV1 revisa,DEV1 review,Pendiente
+S1,TEC-02,Modelo relacional,feat/dev2/s1-TEC-02-schema,BOOT,"Prisma esquema, migraciones, taxonomías, unicidades","Migración DB test, seed idempotente",Ninguna,Pendiente
+S1,TEC-01,Catálogo fuentes,feat/dev2/s1-TEC-01-sources,TEC-02,"Fuentes aprobadas, políticas de robots/acceso",URL no aprobada no se rastrea,Ninguna,Pendiente
+S1,TEC-03,Importación editorial,feat/dev2/s1-TEC-03-import-editorial,TEC-01;TEC-02,"CLI import/dry-run, estados DRAFT, evento de auditoría",Ejecución doble sin duplicar; sin autopublicar,Ninguna,Pendiente
+S2,TEC-04,API pública GET,feat/dev2/s2-TEC-04-public-api,TEC-02;BOOT,"Lista/detalle/filtros, DTO, errores, paginación",200/400/404 y OpenAPI compatibles; solo PUBLISHED,DEV1 integración API,Pendiente
+S2,TEC-05,Extractor HTML,feat/dev2/s2-TEC-05-html-extractor,TEC-01,Crawler Crawlee/Cheerio con límites,"Fixtures offline, 403/429/timeout controlados",Ninguna,Pendiente
+S2,TEC-06,Extractor PDF,feat/dev2/s2-TEC-06-pdf-extractor,TEC-01,"PyMuPDF digital, páginas/texto","Fixture PDF, sin texto → revisión",Ninguna,Pendiente
+S2,TEC-07,Normalización y evidencias,feat/dev2/s2-TEC-07-normalize-evidence,TEC-03;TEC-05;TEC-06,"Zod, evidence per field, hash, ingestions",Idempotencia; preservar fuente + revisión humana,DEV1 fixtures si cambia DTO,Pendiente
+S3,TEC-10,Temporalidad y deduplicación,feat/dev2/s3-TEC-10-status-dedupe,TEC-02;TEC-04;TEC-07,"Clock, zona, precisión; dedupe edición",OPEN/UPCOMING/CLOSED/TO_CONFIRM probados,DEV1 estados API,Pendiente
+S3,TEC-11,Canales oficiales,feat/dev2/s3-TEC-11-official-channels,TEC-07;TEC-10,"APPLY/CONTACT, URL/email, verificación",CONTACT y canal inválido no accionables,DEV1 CTA,Pendiente
+S3,TEC-09,Workflow editorial completo,feat/dev2/s3-TEC-09-editorial-review,TEC-03;TEC-10;TEC-11,Revisión/validación/publicación/retiro auditados,No publicación sin verificación y revisor,DEV1 datos reales,Pendiente
+S4,TEC-12,Seguridad,feat/dev2/s4-TEC-12-security,TEC-04;TEC-05;TEC-11,"Rate limit, CORS, SSRF, secretos, logs",Host privado/redir privado bloqueado,Ninguna,Pendiente
+S4,TEC-13,QA integración,feat/dev2/s4-TEC-13-qa-contract,TEC-04;TEC-09;TEC-12,Unit/integration/contract + E2E coordinado,CI + tests con DB aislada,DEV1 test web,Pendiente
+S4,TEC-14,Despliegue y backup,feat/dev2/s4-TEC-14-deploy-backup,TEC-12;TEC-13,Deploy/migrations/health/backup restore,Smoke staging; restore verificado,DEV1 entorno web,Pendiente
+S4,TEC-15,Runbook operaciones,feat/dev2/s4-TEC-15-runbook,TEC-09;TEC-14,Fuente/ingesta/review/publish/retire/incidentes,Operador sigue pasos documentados,DEV1 validación final,Pendiente
+P1,TEC-08,Extracción IA asistida (opcional),feat/dev2/p1-TEC-08-ai-assisted,Todos los P0,Borrador IA con evidencias y revisión humana,Sin alucinación ni autopublicación,No bloqueante,Pendiente
