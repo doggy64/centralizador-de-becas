@@ -21,6 +21,8 @@
 
 ## Evidencia de aceptación frontend
 
+MVP-020 y MVP-021 presentan el acceso de postulación solo con canal APPLY y VERIFIED. Los portales se anuncian como destinos externos, los correos usan mailto y los canales pendientes no generan CTA. Lint y typecheck pasaron. Las seis pruebas Playwright públicas pasaron en escritorio y móvil. Rama `feat/dev1/s3-MVP-020-021-postulacion-segura`.
+
 MVP-019, MVP-022 y MVP-023 muestran inicio y cierre con la precisión devuelta por API, la fuente original y la última revisión. Las fechas sin respaldo pasan a «Pendiente de verificación». Lint y typecheck pasaron. Las cuatro pruebas de ficha pasaron en escritorio y móvil. Rama `feat/dev1/s3-MVP-019-022-023-fechas-fuente`.
 
 MVP-018 presenta cobertura y beneficios confirmados por la API. No agrega montos ni condiciones cuando el objeto no los informa. Lint y typecheck pasaron. Las cuatro pruebas Playwright de ficha pasaron en escritorio y móvil. Rama `feat/dev1/s3-MVP-018-beneficios-cobertura`.
