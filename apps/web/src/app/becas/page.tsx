@@ -6,6 +6,7 @@ import FiltersForm from '../../components/FiltersForm';
 import ActiveFilters from '../../components/ActiveFilters';
 import { getCatalogFilters, searchScholarships, type SearchParams } from '../../lib/api/scholarships';
 import { ScholarshipApiError } from '../../lib/api/client';
+import { uniqueScholarshipEditions } from '../../lib/unique-scholarship-editions';
 
 export default async function Catalog({ searchParams }: { searchParams: Promise<SearchParams> }) {
   const params = await searchParams;
@@ -18,11 +19,12 @@ export default async function Catalog({ searchParams }: { searchParams: Promise<
     if (!(error instanceof ScholarshipApiError && error.status === 400)) throw error;
     return <><h1>Búsqueda no válida</h1><p>Revisa los parámetros o vuelve a buscar.</p><SearchForm /></>;
   }
+  const scholarships = uniqueScholarshipEditions(results.data);
   return <><h1>Catálogo de becas</h1><SearchForm query={query} />
     <FiltersForm catalogs={catalogs} filters={params} />
     <ActiveFilters catalogs={catalogs} filters={params} />
     <p role="status">Convocatorias encontradas — {results.meta.total}{results.filters.q ? ` para «${results.filters.q}»` : ''}</p>
-    {results.data.length ? <><ul className="cards">{results.data.map(item =>
+    {scholarships.length ? <><ul className="cards">{scholarships.map(item =>
       <li key={item.id}><p>{item.institution.name}</p>
         <h2><Link href={'/becas/' + encodeURIComponent(item.slug)}>{item.title}</Link></h2>
         <p>{item.summary}</p>

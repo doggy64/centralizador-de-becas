@@ -12,6 +12,7 @@
 | 2026-11-22 | MVP-001 | S1 | Verificada con mock | apps/web y docs/frontend | Lint, typecheck y build OK. HTTP y parámetros 3/3. Playwright 6/6 | OpenAPI v1 local y mock | [#1](https://github.com/doggy64/centralizador-de-becas/pull/1) |
 | 2026-11-22 | MVP-002 | S1 | Verificada con mock | Inicio, E2E y capturas | Lint, typecheck y build OK. HTTP y parámetros 3/3. Playwright 8/8 | MVP-001 y mock | [PR de MVP-002](https://github.com/doggy64/centralizador-de-becas/pulls?q=head%3Afeat%2Fdev1%2Fs1-MVP-002-inicio) |
 | 2026-11-22 | MVP-032 | S4 | Preparada para integración; bloqueo externo documentado | Playwright, E2E y progreso | Lint, typecheck, test mock 3/3, Playwright mock 44 casos y build OK; Docker no disponible para E2E real | OpenAPI v1 / API DEV2 en `develop` | Pendiente |
+| 2026-11-22 | MVP-027 | S3 | Verificada con mock | Catálogo y utilidad de presentación | Lint, typecheck, test mock 4/4, build y Playwright catálogo 4/4 OK | OpenAPI v1: slug identifica una edición | Pendiente |
 
 ## Revisión inicial del 22 de noviembre
 
