@@ -23,7 +23,10 @@ export default async function Catalog({ searchParams }: { searchParams: Promise<
     [results, catalogs] = await Promise.all([searchScholarships(params), getCatalogFilters()]);
   } catch (error) {
     if (error instanceof ScholarshipApiError && error.status === 429) return <RateLimitNotice />;
-    if (!(error instanceof ScholarshipApiError && error.status === 400)) throw error;
+    if (!(error instanceof ScholarshipApiError && error.status === 400)) {
+      console.error('[becas/page] Error al cargar datos:', error);
+      throw error;
+    }
     return <section className="scholarship-not-found"><h1>Búsqueda no válida</h1><p>Revisa los parámetros o vuelve a buscar.</p><SearchForm compact /></section>;
   }
   const scholarships = uniqueScholarshipEditions(results.data);
