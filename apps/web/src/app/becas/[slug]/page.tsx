@@ -34,30 +34,35 @@ export default async function Detail({ params, searchParams }: { params: Promise
   ];
   return <article className="scholarship-detail">
     <Link className="detail-back" href={returnTo}>← Volver al catálogo</Link>
-    <header className="detail-header">
-      <div className="detail-header__main"><p className="eyebrow"><span>{scholarship.institution.name || 'No especificado'}</span></p>
-        <TemporalStatus status={scholarship.temporalStatus} />
-        <h1 style={{viewTransitionName: 'beca-' + scholarship.id}}>{scholarship.title}</h1>
-        <p>{scholarship.summary || 'No especificado'}</p>
+    <div className="detail-layout">
+      <div className="detail-left">
+        <div className="detail-header__main">
+          <p className="eyebrow"><span>{scholarship.institution.name || 'No especificado'}</span></p>
+          <TemporalStatus status={scholarship.temporalStatus} />
+          <h1 style={{viewTransitionName: 'beca-' + scholarship.id}}>{scholarship.title}</h1>
+          <p>{scholarship.summary || 'No especificado'}</p>
+        </div>
+        <dl className="key-data detail-facts">
+          {facts.map(([name, value]) => <div key={name}><dt>{name}</dt><dd>{value || 'No especificado'}</dd></div>)}
+          <div><dt>Sitio institucional</dt><dd>{scholarship.institution.websiteUrl
+            ? <a href={scholarship.institution.websiteUrl} target="_blank" rel="noopener noreferrer">Visitar sitio institucional ↗</a>
+            : 'No especificado'}</dd></div>
+        </dl>
+        <VerificationNotice scholarship={scholarship} />
       </div>
-      <aside className="application-summary"><h2 className="summary-kicker">Resumen de postulación</h2>
-        <ol><li>Cobertura: <strong>{label([scholarship.coverage], catalogs.coverages)}</strong></li>
-          <li>Cierre: {scholarship.dates.originalDeadlineText ?? scholarship.dates.deadline ?? 'Por confirmar'}</li></ol>
-        <ApplicationAction channels={scholarship.applicationChannels} />
-      </aside>
-      <dl className="key-data detail-facts">
-        {facts.map(([name, value]) => <div key={name}><dt>{name}</dt><dd>{value || 'No especificado'}</dd></div>)}
-        <div><dt>Sitio institucional</dt><dd>{scholarship.institution.websiteUrl
-          ? <a href={scholarship.institution.websiteUrl} target="_blank" rel="noopener noreferrer">Visitar sitio institucional ↗</a>
-          : 'No especificado'}</dd></div>
-      </dl>
-      <VerificationNotice scholarship={scholarship} />
-    </header>
-    <div className="detail-body">
-      <BenefitsList benefits={scholarship.benefits} />
-      <RequirementList title="Requisitos de elegibilidad" items={scholarship.requirements} />
-      <RequirementList title="Documentos requeridos" items={scholarship.requiredDocuments} />
-      <SourceAndDates scholarship={scholarship} />
+      <div className="detail-right">
+        <aside className="application-summary"><h2 className="summary-kicker">Resumen de postulación</h2>
+          <ol><li>Cobertura: <strong>{label([scholarship.coverage], catalogs.coverages)}</strong></li>
+            <li>Cierre: {scholarship.dates.originalDeadlineText ?? scholarship.dates.deadline ?? 'Por confirmar'}</li></ol>
+          <ApplicationAction channels={scholarship.applicationChannels} />
+        </aside>
+        <div className="detail-sections">
+          <BenefitsList benefits={scholarship.benefits} />
+          <RequirementList title="Requisitos de elegibilidad" items={scholarship.requirements} />
+          <RequirementList title="Documentos requeridos" items={scholarship.requiredDocuments} />
+          <SourceAndDates scholarship={scholarship} />
+        </div>
+      </div>
     </div>
   </article>;
 }
