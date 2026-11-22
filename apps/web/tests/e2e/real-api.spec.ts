@@ -8,7 +8,7 @@ test.describe('integración con API real', () => {
   test('un estudiante abre catálogo y ficha publicada sin adaptadores de UI', async ({ page }) => {
     await page.goto('/becas');
 
-    const scholarshipLink = page.locator('article a').first();
+    const scholarshipLink = page.getByRole('heading', { level: 2 }).getByRole('link').first();
     await expect(scholarshipLink).toBeVisible();
     await scholarshipLink.click();
 

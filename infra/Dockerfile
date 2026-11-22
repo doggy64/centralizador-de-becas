@@ -16,7 +16,8 @@ ENV HOST=0.0.0.0
 EXPOSE 3001
 CMD ["node","apps/api/dist/main.js"]
 FROM build AS worker
-RUN apt-get update && apt-get install -y --no-install-recommends python3-venv && rm -rf /var/lib/apt/lists/* && python3 -m venv /opt/pdf && /opt/pdf/bin/pip install --no-cache-dir -r apps/worker/requirements.txt
+RUN apt-get update && apt-get install -y --no-install-recommends python3-venv tesseract-ocr-spa tesseract-ocr-eng && rm -rf /var/lib/apt/lists/* && python3 -m venv /opt/pdf && /opt/pdf/bin/pip install --no-cache-dir -r apps/worker/requirements.txt
+ENV TESSDATA_PREFIX=/usr/share/tesseract-ocr/5/tessdata
 ENV PYTHON_BIN=/opt/pdf/bin/python
 ENV NODE_ENV=production
 USER node

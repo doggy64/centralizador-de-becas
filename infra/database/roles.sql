@@ -9,3 +9,4 @@ GRANT SELECT ON "Institution","Program","Scholarship","AcademicLevel","StudyArea
 GRANT SELECT,INSERT,UPDATE,DELETE ON ALL TABLES IN SCHEMA public TO becas_editor;
 REVOKE ALL ON "_prisma_migrations" FROM becas_editor;
 REVOKE UPDATE,DELETE ON "ReviewEvent","Evidence" FROM becas_editor;
+GRANT SELECT, INSERT ON "SearchJob" TO becas_reader;
