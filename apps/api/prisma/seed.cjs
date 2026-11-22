@@ -35,7 +35,8 @@ async function seed() {
     [
       "University College, Oxford",
       "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
-    ], [
+    ],
+    [
       "Erasmus Mundus",
       "https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters",
     ],
@@ -61,4 +62,3 @@ seed()
     process.exitCode = 1;
   })
   .finally(() => db.$disconnect());
-

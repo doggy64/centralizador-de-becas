@@ -19,12 +19,8 @@
       "pageNumber": 3,
       "excerpt": null
     },
-    "levels": [
-      "MASTER"
-    ],
-    "countries": [
-      "GB"
-    ]
+    "levels": ["MASTER"],
+    "countries": ["GB"]
   },
   {
     "institution": {
@@ -46,12 +42,8 @@
       "pageNumber": 4,
       "excerpt": null
     },
-    "levels": [
-      "MASTER"
-    ],
-    "countries": [
-      "GB"
-    ]
+    "levels": ["MASTER"],
+    "countries": ["GB"]
   },
   {
     "institution": {
@@ -73,12 +65,8 @@
       "pageNumber": 4,
       "excerpt": null
     },
-    "levels": [
-      "MASTER"
-    ],
-    "countries": [
-      "GB"
-    ]
+    "levels": ["MASTER"],
+    "countries": ["GB"]
   },
   {
     "institution": {
@@ -100,12 +88,8 @@
       "pageNumber": 4,
       "excerpt": null
     },
-    "levels": [
-      "DOCTORATE"
-    ],
-    "countries": [
-      "GB"
-    ]
+    "levels": ["DOCTORATE"],
+    "countries": ["GB"]
   },
   {
     "institution": {
@@ -127,12 +111,8 @@
       "pageNumber": 4,
       "excerpt": null
     },
-    "levels": [
-      "MASTER"
-    ],
-    "countries": [
-      "GB"
-    ]
+    "levels": ["MASTER"],
+    "countries": ["GB"]
   },
   {
     "institution": {
@@ -154,12 +134,8 @@
       "pageNumber": 6,
       "excerpt": null
     },
-    "levels": [
-      "DOCTORATE"
-    ],
-    "countries": [
-      "GB"
-    ]
+    "levels": ["DOCTORATE"],
+    "countries": ["GB"]
   },
   {
     "institution": {
@@ -181,12 +157,8 @@
       "pageNumber": 6,
       "excerpt": null
     },
-    "levels": [
-      "DOCTORATE"
-    ],
-    "countries": [
-      "GB"
-    ]
+    "levels": ["DOCTORATE"],
+    "countries": ["GB"]
   },
   {
     "institution": {
@@ -208,12 +180,8 @@
       "pageNumber": 6,
       "excerpt": null
     },
-    "levels": [
-      "DOCTORATE"
-    ],
-    "countries": [
-      "GB"
-    ]
+    "levels": ["DOCTORATE"],
+    "countries": ["GB"]
   },
   {
     "institution": {
@@ -235,12 +203,8 @@
       "pageNumber": 6,
       "excerpt": null
     },
-    "levels": [
-      "DOCTORATE"
-    ],
-    "countries": [
-      "GB"
-    ]
+    "levels": ["DOCTORATE"],
+    "countries": ["GB"]
   },
   {
     "institution": {
@@ -262,12 +226,8 @@
       "pageNumber": 7,
       "excerpt": null
     },
-    "levels": [
-      "DOCTORATE"
-    ],
-    "countries": [
-      "GB"
-    ]
+    "levels": ["DOCTORATE"],
+    "countries": ["GB"]
   },
   {
     "institution": {
@@ -289,12 +249,8 @@
       "pageNumber": 7,
       "excerpt": null
     },
-    "levels": [
-      "DOCTORATE"
-    ],
-    "countries": [
-      "GB"
-    ]
+    "levels": ["DOCTORATE"],
+    "countries": ["GB"]
   },
   {
     "institution": {
@@ -316,12 +272,8 @@
       "pageNumber": 7,
       "excerpt": null
     },
-    "levels": [
-      "DOCTORATE"
-    ],
-    "countries": [
-      "GB"
-    ]
+    "levels": ["DOCTORATE"],
+    "countries": ["GB"]
   },
   {
     "institution": {
@@ -343,11 +295,7 @@
       "pageNumber": 8,
       "excerpt": null
     },
-    "levels": [
-      "DOCTORATE"
-    ],
-    "countries": [
-      "GB"
-    ]
+    "levels": ["DOCTORATE"],
+    "countries": ["GB"]
   }
 ]

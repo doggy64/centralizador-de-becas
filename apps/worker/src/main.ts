@@ -30,23 +30,33 @@ async function main() {
   const [action, arg, decision] = positionals;
   const actor = values.actor ?? "";
   const note = values.note ?? "";
-  if (!arg && action!=="pilot") throw new Error("Falta argumento");
-  if (values["dry-run"] && action !== "import" && action!=="pilot")
+  if (!arg && action !== "pilot") throw new Error("Falta argumento");
+  if (values["dry-run"] && action !== "import" && action !== "pilot")
     throw new Error("Dry-run solo para importación");
   const db = new PrismaClient();
   try {
-    if (action === "import" || action==="pilot"){
-      const files=action==="pilot"?["chevening","oea","university-college"].map(name=>path.join(__dirname,"../data",name+".json")):[arg];
-      let count=0;
-      for(const file of files){
-       const input:unknown=JSON.parse(await readFile(file,"utf8"));
-       for(const record of Array.isArray(input)?input:[input]){
-        await importCandidate(db,record,actor,values["dry-run"]);
-        count++;
-       }
+    if (action === "import" || action === "pilot") {
+      const files =
+        action === "pilot"
+          ? ["chevening", "oea", "university-college"].map((name) =>
+              path.join(__dirname, "../data", name + ".json"),
+            )
+          : [arg];
+      let count = 0;
+      for (const file of files) {
+        const input: unknown = JSON.parse(await readFile(file, "utf8"));
+        for (const record of Array.isArray(input) ? input : [input]) {
+          await importCandidate(db, record, actor, values["dry-run"]);
+          count++;
+        }
       }
-      console.log(JSON.stringify({processed:count,dryRun:values["dry-run"]??false}));
-    }else if (action === "discover")
+      console.log(
+        JSON.stringify({
+          processed: count,
+          dryRun: values["dry-run"] ?? false,
+        }),
+      );
+    } else if (action === "discover")
       console.log(JSON.stringify(await discover(db, arg)));
     else if (action === "ingest")
       console.log(
@@ -123,4 +133,3 @@ main().catch((error: unknown) => {
   );
   process.exitCode = 2;
 });
-

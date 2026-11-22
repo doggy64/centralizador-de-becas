@@ -237,6 +237,23 @@ export class CatalogService {
     });
     if (!c) throw new NotFoundException();
     const now = new Date();
+    const urlChannels = c.channels.filter(
+      (ch) => ch.type !== "EMAIL" && ch.verification === "VERIFIED",
+    );
+    const approvedHosts = new Set(
+      (urlChannels.length
+        ? await this.db.source.findMany({
+            where: {
+              approved: true,
+              host: {
+                in: urlChannels.map((ch) => new URL(ch.target).hostname),
+              },
+            },
+            select: { host: true },
+          })
+        : []
+      ).map((s) => s.host),
+    );
     const proof = (e: {
       url: string;
       excerpt: string | null;
@@ -262,7 +279,10 @@ export class CatalogService {
       })),
       applicationChannels: c.channels.map((ch) => {
         const verificationStatus =
-          ch.verification === "VERIFIED" && !isFresh(ch.verifiedAt, now)
+          ch.verification === "VERIFIED" &&
+          (!isFresh(ch.verifiedAt, now) ||
+            (ch.type !== "EMAIL" &&
+              !approvedHosts.has(new URL(ch.target).hostname)))
             ? "STALE"
             : ch.verification;
         return {

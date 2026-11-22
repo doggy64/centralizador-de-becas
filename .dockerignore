@@ -1,0 +1,11 @@
+.git
+.env
+.env.*
+**/node_modules
+**/dist
+**/coverage
+KIT_DOS_DESARROLLADORES
+PLAN_DEV2
+apps/web
+docs
+*.dump

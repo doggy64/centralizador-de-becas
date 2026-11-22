@@ -1,3 +1,4 @@
+import { isIP } from "node:net";
 import { z } from "zod";
 export const key = z
   .string()
@@ -8,7 +9,15 @@ export const httpsUrl = z
   .max(2048)
   .url()
   .refine((value) => {
+    if (!URL.canParse(value)) return false;
     const u = new URL(value);
+    if (
+      !u.hostname.includes(".") ||
+      isIP(u.hostname) ||
+      u.hostname.endsWith(".localhost") ||
+      u.hostname.endsWith(".local")
+    )
+      return false;
     return u.protocol === "https:" && !u.username && !u.password && !u.port;
   }, "URL HTTPS institucional requerida");
 const line = z.string().trim().min(1).max(2000);

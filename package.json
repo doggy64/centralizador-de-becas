@@ -8,7 +8,15 @@
   "scripts": {
     "contracts:validate": "node contracts/validate.cjs",
     "format": "prettier --write apps/api apps/worker",
-    "format:check": "prettier --check apps/api apps/worker"
+    "format:check": "prettier --check apps/api apps/worker",
+    "db:generate": "pnpm --filter @becas/api db:generate",
+    "build": "pnpm db:generate && pnpm --filter @becas/api --filter @becas/worker build",
+    "demo:prepare": "node --env-file-if-exists=.env infra/prepare-local.mjs",
+    "demo:start": "node --env-file-if-exists=.env infra/prepare-local.mjs start",
+    "start:api": "node --env-file-if-exists=.env apps/api/dist/main.js",
+    "editorial": "node --env-file-if-exists=.env apps/worker/dist/main.js",
+    "db:backup": "node --env-file-if-exists=.env infra/database/backup.mjs backup",
+    "db:restore": "node --env-file-if-exists=.env infra/database/backup.mjs restore"
   },
   "devDependencies": {
     "@apidevtools/swagger-parser": "12.1.0",

@@ -71,6 +71,12 @@ test("dry-run, idempotencia, procedencia múltiple, edición, revisión y consum
     importCandidate(db, c, "test"),
   ]);
   expect(a.id).toBe(b.id);
+  await expect(
+    db.scholarship.update({
+      where: { id: a.id },
+      data: { status: "PUBLISHED", lastVerifiedAt: new Date() },
+    }),
+  ).rejects.toThrow();
   const other = "https://www.chevening.org/test-offline";
   await importCandidate(
     db,
@@ -245,4 +251,58 @@ test("normalización y auditoría de ingesta con adaptador offline", async () =>
   await review(db, identity.slug, "publish", "test", "confirmada");
   await db.source.update({ where: { host }, data: { approved: false } });
   await api.get("/api/v1/scholarships/" + identity.slug).expect(404);
+});
+test("correo de postulación requiere designación literal y pierde vigencia", async () => {
+  const s = slug + "-email",
+    target = "becas@example.org";
+  const item = {
+    type: "EMAIL",
+    purpose: "APPLY",
+    target,
+    evidence: { ...evidence, excerpt: "Postule por correo a " + target },
+  };
+  const invalid = {
+    ...item,
+    target: "otro@example.org",
+    evidence: { ...evidence, excerpt: "otro@example.org.invalid" },
+  };
+  const { id } = await importCandidate(
+    db,
+    { ...c, slug: s, editionKey: "email", channels: [item, invalid] },
+    "test",
+  );
+  await review(db, s, "submit", "test", "lista");
+  const channels = await db.channel.findMany({ where: { callId: id } });
+  const good = channels.find((x) => x.target === target);
+  await expect(
+    verifyChannel(
+      db,
+      channels.find((x) => x.target !== target).id,
+      "editor",
+      "revisado",
+      "VERIFIED",
+    ),
+  ).rejects.toThrow("exacta");
+  await verifyChannel(
+    db,
+    good.id,
+    "editor",
+    "correo indicado por la fuente",
+    "VERIFIED",
+  );
+  await review(db, s, "publish", "editor", "confirmada");
+  const route = "/api/v1/scholarships/" + s;
+  const result = await api.get(route).expect(200);
+  expect(result.body.applicationChannels.map((x) => x.urlOrEmail)).toContain(
+    target,
+  );
+  await db.channel.update({
+    where: { id: good.id },
+    data: { verifiedAt: new Date("2000-01-01") },
+  });
+  const stale = await api.get(route).expect(200);
+  expect(
+    stale.body.applicationChannels.find((x) => x.verificationStatus === "STALE")
+      .urlOrEmail,
+  ).toBeNull();
 });
