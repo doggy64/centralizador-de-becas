@@ -16,6 +16,7 @@ export default async function Catalog({ searchParams }: { searchParams: Promise<
     return <><h1>Búsqueda no válida</h1><p>Revisa los parámetros o vuelve a buscar.</p><SearchForm /></>;
   }
   return <><h1>Catálogo de becas</h1><SearchForm query={query} />
+    <p role="status">Convocatorias encontradas — {results.meta.total}{results.filters.q ? ` para «${results.filters.q}»` : ''}</p>
     {results.data.length ? <ul className="cards">{results.data.map(item =>
       <li key={item.id}><p>{item.institution.name}</p>
         <h2><Link href={'/becas/' + encodeURIComponent(item.slug)}>{item.title}</Link></h2>

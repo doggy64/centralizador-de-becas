@@ -21,6 +21,8 @@
 
 ## Evidencia de aceptación frontend
 
+MVP-004 muestra el total y el término aplicado. La prueba consulta INGENIERIA, edita a medicina, recarga la URL, vacía el término y busca por institución y programa. Pasaron lint, typecheck, build, 3 pruebas HTTP/parámetros y 14 E2E. Capturas en `evidencia/MVP-004/`. Playwright produjo un aviso de hidratación asociado a su estilo temporal caret-color durante capturas. La tolerancia de acentos se verificó contra el mock y sigue pendiente contra la API real. Rama `feat/dev1/s2-MVP-004-busqueda`, dependiente del PR #3.
+
 MVP-003 agrega destino y nivel con etiquetas del catálogo HTTP y plazo original con ausencia explícita. Verificación del 22 de noviembre con lint, typecheck, build, 3 pruebas HTTP/parámetros y 10 pruebas Playwright aprobadas. Capturas en `evidencia/MVP-003/`. La consulta del remoto sigue mostrando develop en d75ae91, sin entregas de DEV 2. Se continúa por indicación del usuario, con aceptación editorial e integración real pendientes. La rama `feat/dev1/s2-MVP-003-catalogo` depende de los PR #1 y #2.
 
 La prueba de MVP-001 recorrió inicio, catálogo y ficha con un navegador nuevo, abrió el destino externo sintético y comprobó la ausencia del enlace ante un canal pendiente. La primera corrida agotó la espera de cinco segundos al cargar la ficha en escritorio. Con la espera de compilación ajustada, la suite completa pasó en ambos tamaños. Capturas de la ficha en [360 px](evidencia/MVP-001/mobile.png) y [1280 px](evidencia/MVP-001/desktop.png).
