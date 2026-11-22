@@ -2,6 +2,8 @@
 
 ## Estado general
 
+**2026-11-22 — Dirección visual frontend:** rediseño de home, navegación, catálogo y ficha con la identidad «Becas en ruta». Se añadió la cartografía abstracta del hero, paleta azul/jade/amarillo, tipografía sans de sistema, jerarquía responsive y estados de foco/movimiento reducido. Se documentó el sistema en `docs/frontend/identidad-visual.md`. Validación automatizada pendiente.
+
 **Contrato API base:** OpenAPI 3.0.3 v1.0.0 en `contracts/openapi.yaml`, revisado contra `origin/develop` (`edf4284`).
 **Entorno:** Next.js autónomo en `apps/web` con mock HTTP de desarrollo y modo explícito de E2E real.
 **Fase actual:** S4 frontend implementada; integración real bloqueada por el entorno local.

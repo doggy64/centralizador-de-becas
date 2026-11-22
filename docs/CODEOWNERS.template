@@ -1,0 +1,15 @@
+# Copia como .github/CODEOWNERS e inserta handles reales antes de habilitar protección CODEOWNERS.
+/apps/web/ @USUARIO_DEV1
+/docs/frontend/ @USUARIO_DEV1
+/apps/api/ @USUARIO_DEV2
+/apps/worker/ @USUARIO_DEV2
+/packages/ @USUARIO_DEV2
+/contracts/ @USUARIO_DEV2
+/infra/ @USUARIO_DEV2
+/.github/ @USUARIO_DEV2
+/docs/backend/ @USUARIO_DEV2
+/docs/operaciones/ @USUARIO_DEV2
+/docs/integracion/ @USUARIO_DEV2
+/pnpm-lock.yaml @USUARIO_DEV2
+/pnpm-workspace.yaml @USUARIO_DEV2
+/AGENTS.md @USUARIO_DEV2
