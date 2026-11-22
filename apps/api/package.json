@@ -10,8 +10,8 @@
     "test": "pnpm build && jest --runInBand",
     "test:integration": "jest --runInBand --testRegex database.integration.cjs$",
     "db:generate": "prisma generate",
-    "db:migrate": "prisma migrate deploy",
-    "db:seed": "node prisma/seed.cjs"
+    "db:migrate": "node --env-file-if-exists=../../.env node_modules/prisma/build/index.js migrate deploy",
+    "db:seed": "node --env-file-if-exists=../../.env prisma/seed.cjs"
   },
   "dependencies": {
     "@nestjs/common": "11.1.17",

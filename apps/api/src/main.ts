@@ -1,6 +1,8 @@
 import { createApp } from "./app";
 
 async function main() {
+  if (process.env.API_DATABASE_URL)
+    process.env.DATABASE_URL = process.env.API_DATABASE_URL;
   const port = Number(process.env.PORT ?? 3001);
   if (!Number.isInteger(port) || port < 1 || port > 65535)
     throw new Error("PORT inválido");

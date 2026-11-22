@@ -5,7 +5,6 @@ services:
       DATABASE_URL: ${API_DATABASE_URL:?Configure API_DATABASE_URL de lectura}
       CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:3000}
     ports: ["127.0.0.1:3001:3001"]
-    depends_on: { db: { condition: service_healthy } }
     restart: unless-stopped
     healthcheck:
       test: ["CMD","node","-e","fetch('http://127.0.0.1:3001/api/v1/catalogs/filters').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
@@ -17,7 +16,6 @@ services:
     profiles: ["editorial"]
     environment:
       DATABASE_URL: ${WORKER_DATABASE_URL:?Configure WORKER_DATABASE_URL de edición}
-    depends_on: { db: { condition: service_healthy } }
     mem_limit: 512m
     cap_drop: [ALL]
     security_opt: [no-new-privileges:true]
