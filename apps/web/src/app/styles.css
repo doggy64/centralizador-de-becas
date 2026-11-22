@@ -29,5 +29,7 @@ button, .button { background: #195447; color: white; border: 0; cursor: pointer;
 .skip:focus { top: 0; }
 .cards { padding: 0; list-style: none; display: grid; gap: 1rem; }
 .cards li { padding: 1rem 1.5rem; border: 1px solid #ccd7c9; border-radius: .6rem; background: white; }
+.pagination { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 2rem; }
+.pagination [aria-disabled="true"] { color: #687e70; }
 footer { border-top: 1px solid #ccd7c9; padding-block: 1.5rem; font-size: .9rem; }
 @media (max-width: 32rem) { .search-row { flex-direction: column; } }
