@@ -1,0 +1,17 @@
+name: becas
+services:
+  db-test:
+    image: postgres:17.11
+    environment:
+      POSTGRES_USER: becas_test
+      POSTGRES_DB: becas_test
+      POSTGRES_PASSWORD: ${POSTGRES_TEST_PASSWORD:?Configure POSTGRES_TEST_PASSWORD}
+    ports:
+      - "127.0.0.1:5434:5432"
+    tmpfs:
+      - /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "becas_test", "-d", "becas_test"]
+      interval: 5s
+      timeout: 3s
+      retries: 10

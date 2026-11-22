@@ -1,0 +1,362 @@
+[
+  {
+    "institution": {
+      "key": "consorcio-ilspsd",
+      "name": "Consorcio ILSPSD",
+      "websiteUrl": "https://master-international-law-erasmusmundus.eu"
+    },
+    "program": {
+      "key": "ilspsd",
+      "name": "Derecho internacional de la seguridad, la paz y el desarrollo sostenible"
+    },
+    "editionKey": "2027",
+    "slug": "ilspsd-erasmus-mundus-2027",
+    "title": "Derecho internacional de la seguridad, la paz y el desarrollo sostenible · Beca Erasmus Mundus 2027",
+    "summary": "El consorcio distingue la solicitud de beca y la admisión con financiación propia.",
+    "sourceUrl": "https://master-international-law-erasmusmundus.eu/",
+    "evidence": {
+      "sourceUrl": "https://master-international-law-erasmusmundus.eu/",
+      "excerpt": "4 January 2027 (23:59 CET)",
+      "pageNumber": null
+    },
+    "levels": [
+      "MASTER"
+    ],
+    "areas": [
+      "derecho"
+    ],
+    "deadlineAt": "2027-01-04T23:59:00+01:00",
+    "originalDeadlineText": "4 January 2027 (23:59 CET)",
+    "fieldEvidence": {
+      "deadlineAt": {
+        "sourceUrl": "https://master-international-law-erasmusmundus.eu/",
+        "excerpt": "4 January 2027 (23:59 CET)",
+        "pageNumber": null
+      }
+    }
+  },
+  {
+    "institution": {
+      "key": "consorcio-europubhealth",
+      "name": "Consorcio EUROPUBHEALTH",
+      "websiteUrl": "https://www.emundus.izp.cm-uj.krakow.pl"
+    },
+    "program": {
+      "key": "europubhealth",
+      "name": "Europubhealth+ · Salud pública"
+    },
+    "editionKey": "2027",
+    "slug": "europubhealth-erasmus-mundus-2027",
+    "title": "Europubhealth+ · Salud pública · Beca Erasmus Mundus 2027",
+    "summary": "Maestría europea en salud pública. La plataforma tiene una campaña específica para la beca de excelencia.",
+    "sourceUrl": "https://www.emundus.izp.cm-uj.krakow.pl/",
+    "evidence": {
+      "sourceUrl": "https://www.emundus.izp.cm-uj.krakow.pl/",
+      "excerpt": "8 January 2027(1:00 pm CET)",
+      "pageNumber": null
+    },
+    "levels": [
+      "MASTER"
+    ],
+    "areas": [
+      "salud-publica"
+    ],
+    "deadlineAt": "2027-01-08T13:00:00+01:00",
+    "originalDeadlineText": "8 January 2027(1:00 pm CET)",
+    "fieldEvidence": {
+      "deadlineAt": {
+        "sourceUrl": "https://www.emundus.izp.cm-uj.krakow.pl/",
+        "excerpt": "8 January 2027(1:00 pm CET)",
+        "pageNumber": null
+      }
+    }
+  },
+  {
+    "institution": {
+      "key": "consorcio-ediss",
+      "name": "Consorcio EDISS",
+      "websiteUrl": "https://www.master-ediss.eu"
+    },
+    "program": {
+      "key": "ediss",
+      "name": "EDISS · Ingeniería de software para sistemas inteligentes basados en datos"
+    },
+    "editionKey": "2027",
+    "slug": "ediss-erasmus-mundus-2027",
+    "title": "EDISS · Ingeniería de software para sistemas inteligentes basados en datos · Beca Erasmus Mundus 2027",
+    "summary": "La primera ronda considera las becas Erasmus Mundus y EDISS para iniciar los estudios en agosto de 2027.",
+    "sourceUrl": "https://www.master-ediss.eu/upcoming-application-rounds-ediss-intake-7/",
+    "evidence": {
+      "sourceUrl": "https://www.master-ediss.eu/upcoming-application-rounds-ediss-intake-7/",
+      "excerpt": "closing on 12.01.2027 at 3:00 pm Helsinki time",
+      "pageNumber": null
+    },
+    "levels": [
+      "MASTER"
+    ],
+    "areas": [
+      "tecnologia-e-informatica"
+    ],
+    "deadlineAt": "2027-01-12T15:00:00+02:00",
+    "originalDeadlineText": "closing on 12.01.2027 at 3:00 pm Helsinki time",
+    "fieldEvidence": {
+      "deadlineAt": {
+        "sourceUrl": "https://www.master-ediss.eu/upcoming-application-rounds-ediss-intake-7/",
+        "excerpt": "closing on 12.01.2027 at 3:00 pm Helsinki time",
+        "pageNumber": null
+      }
+    }
+  },
+  {
+    "institution": {
+      "key": "consorcio-emildai",
+      "name": "Consorcio EMILDAI",
+      "websiteUrl": "https://emildai.eu"
+    },
+    "program": {
+      "key": "emildai",
+      "name": "EMILDAI · Derecho, datos e inteligencia artificial"
+    },
+    "editionKey": "2027",
+    "slug": "emildai-erasmus-mundus-2027",
+    "title": "EMILDAI · Derecho, datos e inteligencia artificial · Beca Erasmus Mundus 2027",
+    "summary": "Las candidaturas presentadas en la primera ronda de la edición 2027–2029 optan a financiación.",
+    "sourceUrl": "https://emildai.eu/admissions/how-to-apply/",
+    "evidence": {
+      "sourceUrl": "https://emildai.eu/admissions/how-to-apply/",
+      "excerpt": "January 17th 2027",
+      "pageNumber": null
+    },
+    "levels": [
+      "MASTER"
+    ],
+    "areas": [
+      "derecho",
+      "tecnologia-e-informatica"
+    ],
+    "deadlineDay": "2027-01-17",
+    "originalDeadlineText": "January 17th 2027",
+    "fieldEvidence": {
+      "deadlineDay": {
+        "sourceUrl": "https://emildai.eu/admissions/how-to-apply/",
+        "excerpt": "January 17th 2027",
+        "pageNumber": null
+      }
+    }
+  },
+  {
+    "institution": {
+      "key": "consorcio-spacemed",
+      "name": "Consorcio SPACEMED",
+      "websiteUrl": "https://space-med.eu"
+    },
+    "program": {
+      "key": "spacemed",
+      "name": "SpaceMed · Fisiología y medicina en el espacio y en ambientes extremos"
+    },
+    "editionKey": "2027",
+    "slug": "spacemed-erasmus-mundus-2027",
+    "title": "SpaceMed · Fisiología y medicina en el espacio y en ambientes extremos · Beca Erasmus Mundus 2027",
+    "summary": "Se solicita la beca en el formulario de admisión. Los documentos se presentan en inglés.",
+    "sourceUrl": "https://space-med.eu/apply-to-spacemed/application-procedure",
+    "evidence": {
+      "sourceUrl": "https://space-med.eu/apply-to-spacemed/application-procedure",
+      "excerpt": "January 21st 2027 at 11.59pm CET",
+      "pageNumber": null
+    },
+    "levels": [
+      "MASTER"
+    ],
+    "areas": [
+      "medicina"
+    ],
+    "deadlineAt": "2027-01-21T23:59:00+01:00",
+    "originalDeadlineText": "January 21st 2027 at 11.59pm CET",
+    "fieldEvidence": {
+      "deadlineAt": {
+        "sourceUrl": "https://space-med.eu/apply-to-spacemed/application-procedure",
+        "excerpt": "January 21st 2027 at 11.59pm CET",
+        "pageNumber": null
+      }
+    },
+    "benefits": [
+      {
+        "description": "Ayuda mensual de hasta 24 meses.",
+        "amount": 1400,
+        "currency": "EUR",
+        "evidence": {
+          "sourceUrl": "https://space-med.eu/apply-to-spacemed/scholarships",
+          "excerpt": "€1,400 per month",
+          "pageNumber": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": {
+      "key": "consorcio-clmce",
+      "name": "Consorcio CLMCE",
+      "websiteUrl": "https://www.gla.ac.uk"
+    },
+    "program": {
+      "key": "clmce",
+      "name": "CLMCE · Literatura infantil, medios y emprendimiento cultural"
+    },
+    "editionKey": "2027",
+    "slug": "clmce-erasmus-mundus-2027",
+    "title": "CLMCE · Literatura infantil, medios y emprendimiento cultural · Beca Erasmus Mundus 2027",
+    "summary": "La Universidad de Glasgow recibe las solicitudes de admisión y beca para la maestría en literatura infantil y medios.",
+    "sourceUrl": "https://www.gla.ac.uk/postgraduate/erasmusmundus/clmce/howtoapply/",
+    "evidence": {
+      "sourceUrl": "https://www.gla.ac.uk/postgraduate/erasmusmundus/clmce/howtoapply/",
+      "excerpt": "22nd January 2027, 13:00 (UK TIME)",
+      "pageNumber": null
+    },
+    "levels": [
+      "MASTER"
+    ],
+    "areas": [
+      "humanidades"
+    ],
+    "deadlineAt": "2027-01-22T13:00:00+00:00",
+    "originalDeadlineText": "22nd January 2027, 13:00 (UK TIME)",
+    "fieldEvidence": {
+      "deadlineAt": {
+        "sourceUrl": "https://www.gla.ac.uk/postgraduate/erasmusmundus/clmce/howtoapply/",
+        "excerpt": "22nd January 2027, 13:00 (UK TIME)",
+        "pageNumber": null
+      }
+    }
+  },
+  {
+    "institution": {
+      "key": "consorcio-emlex",
+      "name": "Consorcio EMLEX",
+      "websiteUrl": "https://www1.emlex.eu"
+    },
+    "program": {
+      "key": "emlex",
+      "name": "EMLex · Maestría europea en lexicografía"
+    },
+    "editionKey": "2027",
+    "slug": "emlex-erasmus-mundus-2027",
+    "title": "EMLex · Maestría europea en lexicografía · Beca Erasmus Mundus 2027",
+    "summary": "Formación en lexicografía en universidades del consorcio. El plazo para solicitar la beca incluye el 1 de febrero.",
+    "sourceUrl": "https://www1.emlex.eu/web/application",
+    "evidence": {
+      "sourceUrl": "https://www1.emlex.eu/web/application",
+      "excerpt": "1 February 2027 (inclusive)",
+      "pageNumber": null
+    },
+    "levels": [
+      "MASTER"
+    ],
+    "areas": [
+      "humanidades"
+    ],
+    "deadlineDay": "2027-02-01",
+    "originalDeadlineText": "1 February 2027 (inclusive)",
+    "fieldEvidence": {
+      "deadlineDay": {
+        "sourceUrl": "https://www1.emlex.eu/web/application",
+        "excerpt": "1 February 2027 (inclusive)",
+        "pageNumber": null
+      }
+    }
+  },
+  {
+    "institution": {
+      "key": "consorcio-lawgid",
+      "name": "Consorcio LAWGID",
+      "websiteUrl": "https://lawgid.ius.bg.ac.rs"
+    },
+    "program": {
+      "key": "lawgid",
+      "name": "LAWGID · Derecho, género, interseccionalidad y diversidad"
+    },
+    "editionKey": "2027",
+    "slug": "lawgid-erasmus-mundus-2027",
+    "title": "LAWGID · Derecho, género, interseccionalidad y diversidad · Beca Erasmus Mundus 2027",
+    "summary": "El consorcio recibe candidaturas desde el 1 de diciembre de 2026 para el curso 2027/28.",
+    "sourceUrl": "https://lawgid.ius.bg.ac.rs/2026/11/17/call-for-applications-for-the-lawgid-master-programme-academic-year-2027-2028/",
+    "evidence": {
+      "sourceUrl": "https://lawgid.ius.bg.ac.rs/2026/11/17/call-for-applications-for-the-lawgid-master-programme-academic-year-2027-2028/",
+      "excerpt": "Application deadline: 15 February 2027",
+      "pageNumber": null
+    },
+    "levels": [
+      "MASTER"
+    ],
+    "areas": [
+      "derecho"
+    ],
+    "deadlineDay": "2027-02-15",
+    "originalDeadlineText": "Application deadline: 15 February 2027",
+    "fieldEvidence": {
+      "deadlineDay": {
+        "sourceUrl": "https://lawgid.ius.bg.ac.rs/2026/11/17/call-for-applications-for-the-lawgid-master-programme-academic-year-2027-2028/",
+        "excerpt": "Application deadline: 15 February 2027",
+        "pageNumber": null
+      },
+      "startDate": {
+        "sourceUrl": "https://lawgid.ius.bg.ac.rs/2026/11/17/call-for-applications-for-the-lawgid-master-programme-academic-year-2027-2028/",
+        "excerpt": "Opening date: 1 December 2026",
+        "pageNumber": null
+      }
+    },
+    "startDate": "2026-12-01",
+    "benefits": [
+      {
+        "description": "Ayuda mensual de hasta 24 meses.",
+        "amount": 1400,
+        "currency": "EUR",
+        "evidence": {
+          "sourceUrl": "https://lawgid.ius.bg.ac.rs/lawgid-scholarship-candidates/",
+          "excerpt": "EUR 1,400 per month",
+          "pageNumber": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": {
+      "key": "universidad-de-groningen",
+      "name": "Universidad de Groningen",
+      "websiteUrl": "https://www.rug.nl"
+    },
+    "program": {
+      "key": "eric-bleumink-fellowship",
+      "name": "Eric Bleumink Fellowship"
+    },
+    "editionKey": "2027",
+    "slug": "eric-bleumink-fellowship-2027",
+    "title": "Eric Bleumink Fellowship · Maestrías en Groningen 2027",
+    "summary": "Beca por nominación para maestrías de 12 a 24 meses en Países Bajos. Bolivia figura entre los países elegibles. Para iniciar en septiembre de 2027, completa la admisión en ambos portales antes del 1 de diciembre de 2026 y obtén la admisión antes del 1 de febrero. La universidad cubre matrícula, viaje internacional, manutención, libros y seguro médico.",
+    "sourceUrl": "https://www.rug.nl/education/scholarships/eric-bleumink-fellowship?lang=en",
+    "evidence": {
+      "sourceUrl": "https://www.rug.nl/education/scholarships/eric-bleumink-fellowship?lang=en",
+      "excerpt": "before 1 December in both Studielink and the Progress Portal",
+      "pageNumber": null
+    },
+    "areas": [
+      "humanidades",
+      "derecho",
+      "tecnologia-e-informatica"
+    ],
+    "levels": [
+      "MASTER"
+    ],
+    "countries": [
+      "NL"
+    ],
+    "deadlineDay": "2026-11-30",
+    "originalDeadlineText": "before 1 December in both Studielink and the Progress Portal",
+    "fieldEvidence": {
+      "deadlineDay": {
+        "sourceUrl": "https://www.rug.nl/education/scholarships/eric-bleumink-fellowship?lang=en",
+        "excerpt": "before 1 December in both Studielink and the Progress Portal",
+        "pageNumber": null
+      }
+    }
+  }
+]

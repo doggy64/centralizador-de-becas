@@ -1,0 +1,301 @@
+[
+  {
+    "institution": {
+      "key": "university-college-oxford",
+      "name": "University College, Oxford",
+      "websiteUrl": "https://univ.ox.ac.uk"
+    },
+    "program": {
+      "key": "beacon",
+      "name": "Beacon"
+    },
+    "editionKey": "2026-27",
+    "slug": "univ-beacon-2026-27",
+    "title": "Beacon 2026–27",
+    "summary": "Maestrías para estudiantes británicos de ascendencia africana negra o caribeña negra.",
+    "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+    "evidence": {
+      "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+      "pageNumber": 3,
+      "excerpt": null
+    },
+    "levels": ["MASTER"],
+    "countries": ["GB"]
+  },
+  {
+    "institution": {
+      "key": "university-college-oxford",
+      "name": "University College, Oxford",
+      "websiteUrl": "https://univ.ox.ac.uk"
+    },
+    "program": {
+      "key": "swire",
+      "name": "Oxford-Swire"
+    },
+    "editionKey": "2026-27",
+    "slug": "univ-swire-2026-27",
+    "title": "Oxford-Swire 2026–27",
+    "summary": "Maestrías de un año en Historia.",
+    "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+    "evidence": {
+      "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+      "pageNumber": 4,
+      "excerpt": null
+    },
+    "levels": ["MASTER"],
+    "countries": ["GB"]
+  },
+  {
+    "institution": {
+      "key": "university-college-oxford",
+      "name": "University College, Oxford",
+      "websiteUrl": "https://univ.ox.ac.uk"
+    },
+    "program": {
+      "key": "anderson",
+      "name": "Oxford-Anderson"
+    },
+    "editionKey": "2026-27",
+    "slug": "univ-anderson-2026-27",
+    "title": "Oxford-Anderson 2026–27",
+    "summary": "Maestrías de un año en Humanidades.",
+    "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+    "evidence": {
+      "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+      "pageNumber": 4,
+      "excerpt": null
+    },
+    "levels": ["MASTER"],
+    "countries": ["GB"]
+  },
+  {
+    "institution": {
+      "key": "university-college-oxford",
+      "name": "University College, Oxford",
+      "websiteUrl": "https://univ.ox.ac.uk"
+    },
+    "program": {
+      "key": "orsborn",
+      "name": "Oxford-Edward Orsborn"
+    },
+    "editionKey": "2026-27",
+    "slug": "univ-orsborn-2026-27",
+    "title": "Oxford-Edward Orsborn 2026–27",
+    "summary": "Doctorado en historia estadounidense para residentes del Reino Unido.",
+    "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+    "evidence": {
+      "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+      "pageNumber": 4,
+      "excerpt": null
+    },
+    "levels": ["DOCTORATE"],
+    "countries": ["GB"]
+  },
+  {
+    "institution": {
+      "key": "university-college-oxford",
+      "name": "University College, Oxford",
+      "websiteUrl": "https://univ.ox.ac.uk"
+    },
+    "program": {
+      "key": "ilchester",
+      "name": "Ilchester"
+    },
+    "editionKey": "2026-27",
+    "slug": "univ-ilchester-2026-27",
+    "title": "Ilchester 2026–27",
+    "summary": "Maestría en estudios eslavos.",
+    "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+    "evidence": {
+      "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+      "pageNumber": 4,
+      "excerpt": null
+    },
+    "levels": ["MASTER"],
+    "countries": ["GB"]
+  },
+  {
+    "institution": {
+      "key": "university-college-oxford",
+      "name": "University College, Oxford",
+      "websiteUrl": "https://univ.ox.ac.uk"
+    },
+    "program": {
+      "key": "ashton",
+      "name": "Oxford-Ashton"
+    },
+    "editionKey": "2026-27",
+    "slug": "univ-ashton-2026-27",
+    "title": "Oxford-Ashton 2026–27",
+    "summary": "Doctorado en Ingeniería.",
+    "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+    "evidence": {
+      "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+      "pageNumber": 6,
+      "excerpt": null
+    },
+    "levels": ["DOCTORATE"],
+    "countries": ["GB"]
+  },
+  {
+    "institution": {
+      "key": "university-college-oxford",
+      "name": "University College, Oxford",
+      "websiteUrl": "https://univ.ox.ac.uk"
+    },
+    "program": {
+      "key": "berman",
+      "name": "Oxford-Berman"
+    },
+    "editionKey": "2026-27",
+    "slug": "univ-berman-2026-27",
+    "title": "Oxford-Berman 2026–27",
+    "summary": "Doctorado en Física.",
+    "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+    "evidence": {
+      "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+      "pageNumber": 6,
+      "excerpt": null
+    },
+    "levels": ["DOCTORATE"],
+    "countries": ["GB"]
+  },
+  {
+    "institution": {
+      "key": "university-college-oxford",
+      "name": "University College, Oxford",
+      "websiteUrl": "https://univ.ox.ac.uk"
+    },
+    "program": {
+      "key": "bob-thomas",
+      "name": "Oxford-Bob-Thomas"
+    },
+    "editionKey": "2026-27",
+    "slug": "univ-bob-thomas-2026-27",
+    "title": "Oxford-Bob-Thomas 2026–27",
+    "summary": "Doctorado en Química, con preferencia por fisicoquímica.",
+    "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+    "evidence": {
+      "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+      "pageNumber": 6,
+      "excerpt": null
+    },
+    "levels": ["DOCTORATE"],
+    "countries": ["GB"]
+  },
+  {
+    "institution": {
+      "key": "university-college-oxford",
+      "name": "University College, Oxford",
+      "websiteUrl": "https://univ.ox.ac.uk"
+    },
+    "program": {
+      "key": "radcliffe-geociencias",
+      "name": "Oxford-Radcliffe en Ciencias de la Tierra"
+    },
+    "editionKey": "2026-27",
+    "slug": "univ-radcliffe-geociencias-2026-27",
+    "title": "Oxford-Radcliffe en Ciencias de la Tierra 2026–27",
+    "summary": "Doctorado en el departamento de Ciencias de la Tierra.",
+    "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+    "evidence": {
+      "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+      "pageNumber": 6,
+      "excerpt": null
+    },
+    "levels": ["DOCTORATE"],
+    "countries": ["GB"]
+  },
+  {
+    "institution": {
+      "key": "university-college-oxford",
+      "name": "University College, Oxford",
+      "websiteUrl": "https://univ.ox.ac.uk"
+    },
+    "program": {
+      "key": "radcliffe-oncologia",
+      "name": "Oxford-Radcliffe en Oncología"
+    },
+    "editionKey": "2026-27",
+    "slug": "univ-radcliffe-oncologia-2026-27",
+    "title": "Oxford-Radcliffe en Oncología 2026–27",
+    "summary": "Doctorados en el departamento de Oncología.",
+    "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+    "evidence": {
+      "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+      "pageNumber": 7,
+      "excerpt": null
+    },
+    "levels": ["DOCTORATE"],
+    "countries": ["GB"]
+  },
+  {
+    "institution": {
+      "key": "university-college-oxford",
+      "name": "University College, Oxford",
+      "websiteUrl": "https://univ.ox.ac.uk"
+    },
+    "program": {
+      "key": "war-memorial",
+      "name": "War Memorial"
+    },
+    "editionKey": "2026-27",
+    "slug": "univ-war-memorial-2026-27",
+    "title": "War Memorial 2026–27",
+    "summary": "Doctorados en ciencias médicas.",
+    "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+    "evidence": {
+      "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+      "pageNumber": 7,
+      "excerpt": null
+    },
+    "levels": ["DOCTORATE"],
+    "countries": ["GB"]
+  },
+  {
+    "institution": {
+      "key": "university-college-oxford",
+      "name": "University College, Oxford",
+      "websiteUrl": "https://univ.ox.ac.uk"
+    },
+    "program": {
+      "key": "henni-mester",
+      "name": "Henni Mester"
+    },
+    "editionKey": "2026-27",
+    "slug": "univ-henni-mester-2026-27",
+    "title": "Henni Mester 2026–27",
+    "summary": "Doctorados sobre artritis o reumatismo, para estudiantes del Reino Unido.",
+    "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+    "evidence": {
+      "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+      "pageNumber": 7,
+      "excerpt": null
+    },
+    "levels": ["DOCTORATE"],
+    "countries": ["GB"]
+  },
+  {
+    "institution": {
+      "key": "university-college-oxford",
+      "name": "University College, Oxford",
+      "websiteUrl": "https://univ.ox.ac.uk"
+    },
+    "program": {
+      "key": "radcliffe-politica",
+      "name": "Oxford-Radcliffe en Política"
+    },
+    "editionKey": "2026-27",
+    "slug": "univ-radcliffe-politica-2026-27",
+    "title": "Oxford-Radcliffe en Política 2026–27",
+    "summary": "Doctorados en Política o Relaciones Internacionales, en las áreas indicadas en las bases.",
+    "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+    "evidence": {
+      "sourceUrl": "https://univ.ox.ac.uk/wp-content/uploads/2025/09/Web_Studentships-and-Scholarships-2026-27.pdf",
+      "pageNumber": 8,
+      "excerpt": null
+    },
+    "levels": ["DOCTORATE"],
+    "countries": ["GB"]
+  }
+]

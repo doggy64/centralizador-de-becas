@@ -1,0 +1,21 @@
+{
+  "name": "@becas/worker",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src test",
+    "start": "node dist/main.js",
+    "test": "pnpm build && jest --runInBand"
+  },
+  "dependencies": {
+    "@crawlee/basic": "3.15.3",
+    "@crawlee/core": "3.15.3",
+    "@prisma/client": "6.19.3",
+    "cheerio": "1.1.2",
+    "ipaddr.js": "2.3.0",
+    "robots-parser": "3.0.1",
+    "zod": "3.25.76"
+  }
+}

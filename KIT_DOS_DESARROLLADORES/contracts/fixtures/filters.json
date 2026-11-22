@@ -1,0 +1,8 @@
+{
+  "levels": [{"value":"MASTER","label":"Maestría"}],
+  "areas": [{"value":"ingenieria","label":"Ingeniería"}],
+  "countries": [{"value":"BO","label":"Bolivia"}],
+  "modalities": [{"value":"ONLINE","label":"Virtual"}, {"value":"ON_SITE","label":"Presencial"}, {"value":"HYBRID","label":"Híbrida"}],
+  "coverages": [{"value":"FULL","label":"Completa"}, {"value":"PARTIAL","label":"Parcial"}, {"value":"UNKNOWN","label":"No especificada"}],
+  "statuses": [{"value":"OPEN","label":"Abierta"}, {"value":"UPCOMING","label":"Próxima"}, {"value":"CLOSED","label":"Cerrada"}, {"value":"TO_CONFIRM","label":"Por confirmar"}]
+}

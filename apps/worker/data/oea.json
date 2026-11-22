@@ -1,0 +1,23 @@
+{
+  "institution": {
+    "key": "oea",
+    "name": "Organización de los Estados Americanos",
+    "websiteUrl": "https://www.oas.org"
+  },
+  "program": {
+    "key": "becas-academicas-posgrado",
+    "name": "Programa de Becas Académicas de la OEA"
+  },
+  "editionKey": "2026",
+  "slug": "oea-2026",
+  "title": "Becas académicas de posgrado de la OEA 2026",
+  "summary": "Apoyo complementario para estudios o investigación de posgrado. El plazo depende de la Oficina Nacional de Enlace.",
+  "sourceUrl": "https://www.oas.org/en/scholarships/Academic_Program_OAS_2026.asp",
+  "evidence": {
+    "sourceUrl": "https://www.oas.org/en/scholarships/Academic_Program_OAS_2026.asp",
+    "excerpt": "Check application deadlines with your ONE.",
+    "pageNumber": null
+  },
+  "levels": [],
+  "countries": []
+}

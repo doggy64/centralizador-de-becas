@@ -1,0 +1,40 @@
+{
+  "id": "synthetic-call-001",
+  "slug": "programa-de-prueba-edicion-2027-1",
+  "title": "Convocatoria sintética de prueba",
+  "summary": "Registro inventado únicamente para pruebas automatizadas.",
+  "programName": "Programa sintético",
+  "editionKey": "2027-1",
+  "institution": { "name": "Institución ficticia de pruebas", "websiteUrl": "https://example.org" },
+  "levels": ["MASTER"],
+  "areas": ["ingenieria"],
+  "destinationCountries": ["BO"],
+  "modality": "ONLINE",
+  "coverage": "UNKNOWN",
+  "temporalStatus": "TO_CONFIRM",
+  "dates": {
+    "startDate": null,
+    "deadline": null,
+    "originalDeadlineText": null,
+    "precision": "UNKNOWN",
+    "timeZone": null
+  },
+  "lastVerifiedAt": null,
+  "requirements": [
+    {
+      "label": "Ejemplo ficticio de requisito",
+      "required": null,
+      "evidence": { "sourceUrl": "https://example.org/convocatoria-prueba", "excerpt": null, "pageNumber": null }
+    }
+  ],
+  "requiredDocuments": [],
+  "benefits": [],
+  "applicationChannels": [
+    {
+      "type": "FORM_URL", "purpose": "APPLY", "verificationStatus": "PENDING",
+      "urlOrEmail": null, "verifiedAt": null, "evidence": null
+    }
+  ],
+  "sourceOriginalUrl": "https://example.org/convocatoria-prueba",
+  "sourceTitle": "Fuente ficticia para tests"
+}

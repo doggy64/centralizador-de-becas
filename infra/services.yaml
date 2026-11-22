@@ -1,0 +1,26 @@
+services:
+  api:
+    build: { context: .., dockerfile: infra/Dockerfile, target: api }
+    environment:
+      DATABASE_URL: ${API_DATABASE_URL:?Configure API_DATABASE_URL de lectura}
+      SEARCH_ADMIN_TOKEN: "${SEARCH_ADMIN_TOKEN:-}"
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:3000}
+    ports: ["127.0.0.1:3001:3001"]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD","node","-e","fetch('http://127.0.0.1:3001/api/v1/catalogs/filters').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+  worker:
+    build: { context: .., dockerfile: infra/Dockerfile, target: worker }
+    command: ["serve"]
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: ${WORKER_DATABASE_URL:?Configure WORKER_DATABASE_URL de edición}
+      SEARCH_CATALOG_URL: http://api:3001
+      SEARCH_PUBLISH_HOSTS: "${SEARCH_PUBLISH_HOSTS:-}"
+      BRAVE_SEARCH_API_KEY: "${BRAVE_SEARCH_API_KEY:-}"
+    mem_limit: 512m
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]

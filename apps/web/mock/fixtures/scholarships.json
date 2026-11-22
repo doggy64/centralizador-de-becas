@@ -1,0 +1,88 @@
+{
+  "notice": "DATOS FICTICIOS PARA PRUEBAS. NO PUBLICAR.",
+  "items": [
+    {
+      "id": "demo-001",
+      "slug": "demo-ingenieria-2027",
+      "title": "Beca ficticia para Ingeniería (DEMO)",
+      "summary": "Convocatoria inventada únicamente para pruebas del frontend.",
+      "programName": "Programa de prueba",
+      "editionKey": "2027-a",
+      "institution": { "name": "Institución ficticia de pruebas", "websiteUrl": "https://example.org" },
+      "levels": ["MASTER"],
+      "areas": ["ingenieria"],
+      "destinationCountries": ["BO"],
+      "modality": "ONLINE",
+      "coverage": "FULL",
+      "temporalStatus": "OPEN",
+      "dates": { "startDate": "2026-01-01", "deadline": null, "originalDeadlineText": "31 de diciembre de 2027 (fecha ficticia)", "precision": "DATE_ONLY", "timeZone": null },
+      "lastVerifiedAt": "2026-11-01T12:00:00Z",
+      "requirements": [
+        { "label": "Requisito ficticio de ejemplo", "required": true, "evidence": { "sourceUrl": "https://example.org/convocatoria-demo", "excerpt": "Texto de prueba", "pageNumber": null } }
+      ],
+      "requiredDocuments": [ { "label": "Documento ficticio de prueba", "required": true, "evidence": null } ],
+      "benefits": [ { "description": "Cobertura ilustrativa no real", "amount": null, "currency": null, "evidence": null } ],
+      "applicationChannels": [
+        { "type": "FORM_URL", "purpose": "APPLY", "verificationStatus": "VERIFIED", "urlOrEmail": "https://example.org/postular-demo", "verifiedAt": "2026-11-01T12:00:00Z", "evidence": { "sourceUrl": "https://example.org/convocatoria-demo", "excerpt": "Simulación de canal verificado", "pageNumber": null } }
+      ],
+      "sourceOriginalUrl": "https://example.org/convocatoria-demo",
+      "sourceTitle": "Fuente DEMO, no oficial"
+    },
+    {
+      "id": "demo-002",
+      "slug": "demo-medicina-por-confirmar",
+      "title": "Beca ficticia de Medicina (DEMO)",
+      "summary": "Ejemplo de convocatoria sin fechas ni canal confirmado.",
+      "programName": "Programa de prueba 2",
+      "editionKey": "edicion-desconocida-demo",
+      "institution": { "name": "Entidad inventada de prueba", "websiteUrl": null },
+      "levels": ["UNDERGRADUATE"],
+      "areas": ["medicina"],
+      "destinationCountries": ["ES"],
+      "modality": "ON_SITE",
+      "coverage": "UNKNOWN",
+      "temporalStatus": "TO_CONFIRM",
+      "dates": { "startDate": null, "deadline": null, "originalDeadlineText": null, "precision": "UNKNOWN", "timeZone": null },
+      "lastVerifiedAt": null,
+      "requirements": [],
+      "requiredDocuments": [],
+      "benefits": [],
+      "applicationChannels": [
+        { "type": "EMAIL", "purpose": "CONTACT", "verificationStatus": "PENDING", "urlOrEmail": null, "verifiedAt": null, "evidence": null }
+      ],
+      "sourceOriginalUrl": "https://example.org/convocatoria-demo-2",
+      "sourceTitle": "Otra fuente inventada"
+    },
+    {
+      "id": "demo-003",
+      "slug": "demo-historia-cerrada",
+      "title": "Beca ficticia de Historia cerrada (DEMO)",
+      "summary": "Convocatoria cerrada para probar filtros y etiquetas.",
+      "programName": "Programa de prueba 3",
+      "editionKey": "2025-b",
+      "institution": { "name": "Centro de pruebas", "websiteUrl": "https://example.org" },
+      "levels": ["DOCTORATE"],
+      "areas": ["historia"],
+      "destinationCountries": ["AR"],
+      "modality": "HYBRID",
+      "coverage": "PARTIAL",
+      "temporalStatus": "CLOSED",
+      "dates": { "startDate": "2025-01-01", "deadline": "2025-09-30T23:59:00Z", "originalDeadlineText": "30 de septiembre de 2025", "precision": "DATETIME", "timeZone": "Etc/UTC" },
+      "lastVerifiedAt": "2026-11-01T12:00:00Z",
+      "requirements": [],
+      "requiredDocuments": [],
+      "benefits": [],
+      "applicationChannels": [],
+      "sourceOriginalUrl": "https://example.org/convocatoria-demo-3",
+      "sourceTitle": "Convocatoria DEMO cerrada"
+    }
+  ],
+  "filters": {
+    "levels": [ { "value": "UNDERGRADUATE", "label": "Pregrado" }, { "value": "MASTER", "label": "Maestría" }, { "value": "DOCTORATE", "label": "Doctorado" } ],
+    "areas": [ { "value": "ingenieria", "label": "Ingeniería" }, { "value": "medicina", "label": "Medicina" }, { "value": "historia", "label": "Historia" } ],
+    "countries": [ { "value": "BO", "label": "Bolivia" }, { "value": "ES", "label": "España" }, { "value": "AR", "label": "Argentina" } ],
+    "modalities": [ { "value": "ONLINE", "label": "Virtual" }, { "value": "ON_SITE", "label": "Presencial" }, { "value": "HYBRID", "label": "Híbrida" } ],
+    "coverages": [ { "value": "FULL", "label": "Completa" }, { "value": "PARTIAL", "label": "Parcial" }, { "value": "UNKNOWN", "label": "Sin especificar" } ],
+    "statuses": [ { "value": "OPEN", "label": "Abierta" }, { "value": "UPCOMING", "label": "Próxima" }, { "value": "CLOSED", "label": "Cerrada" }, { "value": "TO_CONFIRM", "label": "Por confirmar" } ]
+  }
+}

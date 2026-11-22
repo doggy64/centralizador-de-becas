@@ -1,0 +1,33 @@
+﻿ID,Titulo,Prioridad,Fase,Dueno_UI,Ruta_UI,Dueno_API,Responsabilidad_API,Cierre
+MVP-001,Acceso sin registro,P0,S1,DEV1,apps/web/**,DEV2,Sin auth ni sesiones; API pública GET,Integrado en develop + tests aceptación
+MVP-002,Inicio orientado a buscar becas,P0,S1,DEV1,apps/web/**,DEV2,Catálogos/health sin login,Integrado en develop + tests aceptación
+MVP-003,Listado público de convocatorias,P0,S2,DEV1,apps/web/**,DEV2,GET list solo PUBLISHED,Integrado en develop + tests aceptación
+MVP-004,Búsqueda por texto,P0,S2,DEV1,apps/web/**,DEV2,Búsqueda q y acentos,Integrado en develop + tests aceptación
+MVP-005,Búsqueda sin coincidencias,P0,S3,DEV1,apps/web/**,DEV2,GET lista vacía meta.total=0,Integrado en develop + tests aceptación
+MVP-006,Navegación de resultados,P0,S2,DEV1,apps/web/**,DEV2,Paginación determinista y filtros,Integrado en develop + tests aceptación
+MVP-007,Filtro por nivel académico,P0,S2,DEV1,apps/web/**,DEV2,level y catálogo,Integrado en develop + tests aceptación
+MVP-008,Filtro por área de estudio,P0,S2,DEV1,apps/web/**,DEV2,area y multiarea,Integrado en develop + tests aceptación
+MVP-009,Filtro por país de destino,P0,S2,DEV1,apps/web/**,DEV2,country destino,Integrado en develop + tests aceptación
+MVP-010,Filtro por modalidad,P0,S2,DEV1,apps/web/**,DEV2,modality enum,Integrado en develop + tests aceptación
+MVP-011,Filtro por cobertura,P0,S2,DEV1,apps/web/**,DEV2,coverage con evidencia,Integrado en develop + tests aceptación
+MVP-012,Filtro por vigencia,P0,S3,DEV1,apps/web/**,DEV2,status temporal derivado,Integrado en develop + tests aceptación
+MVP-013,Combinación y limpieza de filtros,P0,S3,DEV1,apps/web/**,DEV2,Filtros combinados y saneamiento,Integrado en develop + tests aceptación
+MVP-014,Ordenamiento de convocatorias,P1,P1,DEV1,apps/web/**,DEV2,Orden estable opcional,Integrado en develop + tests aceptación
+MVP-015,Ficha detallada de beca,P0,S2,DEV1,apps/web/**,DEV2,GET ficha por slug,Integrado en develop + tests aceptación
+MVP-016,Requisitos de elegibilidad,P0,S3,DEV1,apps/web/**,DEV2,Requisitos con evidencia,Integrado en develop + tests aceptación
+MVP-017,Documentación requerida,P0,S3,DEV1,apps/web/**,DEV2,Documentos con evidencia,Integrado en develop + tests aceptación
+MVP-018,Beneficios y costos,P0,S3,DEV1,apps/web/**,DEV2,Beneficios/costos verificados,Integrado en develop + tests aceptación
+MVP-019,Plazos de la convocatoria,P0,S3,DEV1,apps/web/**,DEV2,"Fechas, precisión y zona",Integrado en develop + tests aceptación
+MVP-020,Postulación mediante enlace oficial,P0,S3,DEV1,apps/web/**,DEV2,Canal APPLY URL verificado,Integrado en develop + tests aceptación
+MVP-021,Postulación mediante correo institucional,P0,S3,DEV1,apps/web/**,DEV2,Canal APPLY EMAIL verificado,Integrado en develop + tests aceptación
+MVP-022,Acceso a la convocatoria original,P0,S3,DEV1,apps/web/**,DEV2,URL fuente original,Integrado en develop + tests aceptación
+MVP-023,Fecha de verificación y procedencia,P0,S3,DEV1,apps/web/**,DEV2,lastVerifiedAt y evidencia,Integrado en develop + tests aceptación
+MVP-024,Distinguir programa y edición,P0,S3,DEV1,apps/web/**,DEV2,Program/Call + editionKey,Integrado en develop + tests aceptación
+MVP-025,Estado de beca vencida,P0,S3,DEV1,apps/web/**,DEV2,CLOSED y vigencia,Integrado en develop + tests aceptación
+MVP-026,Información incompleta identificada,P0,S3,DEV1,apps/web/**,DEV2,Campos null / incompletos,Integrado en develop + tests aceptación
+MVP-027,Resultados sin duplicados,P0,S3,DEV1,apps/web/**,DEV2,Deduplicación por edición,Integrado en develop + tests aceptación
+MVP-028,Aviso de información incorrecta,P1,P1,DEV1,apps/web/**,DEV2,"Recepción de incidencias opcional, backend coordinado",Integrado en develop + tests aceptación
+MVP-029,Diseño móvil y adaptable,P0,S4,DEV1,apps/web/**,DEV2,Respuestas de API estables en móvil,Integrado en develop + tests aceptación
+MVP-030,Accesibilidad básica,P0,S4,DEV1,apps/web/**,DEV2,Errores y semántica accesible,Integrado en develop + tests aceptación
+MVP-031,Compartir una beca,P1,P1,DEV1,apps/web/**,DEV2,URL canónica por edición,Integrado en develop + tests aceptación
+MVP-032,Estados de carga y errores,P0,S2/S4,DEV1,apps/web/**,DEV2,Errores HTTP y loading coherente,Integrado en develop + tests aceptación

@@ -1,0 +1,125 @@
+[
+  {
+    "institution": {
+      "key": "consorcio-euroculture",
+      "name": "Consorcio Euroculture",
+      "websiteUrl": "https://www.euroculturemaster.eu"
+    },
+    "program": {
+      "key": "euroculture",
+      "name": "Euroculture"
+    },
+    "editionKey": "2027-2029",
+    "slug": "euroculture-erasmus-mundus-2027-2029",
+    "title": "Euroculture — Beca Erasmus Mundus 2027-2029",
+    "summary": "Maestría conjunta Euroculture. La candidatura completa permite optar a la beca.",
+    "sourceUrl": "https://www.euroculturemaster.eu/application-procedure",
+    "evidence": {
+      "sourceUrl": "https://www.euroculturemaster.eu/application-procedure",
+      "excerpt": "Erasmus Mundus scholarship application deadline - 15 January 2027",
+      "pageNumber": null
+    },
+    "levels": [
+      "MASTER"
+    ],
+    "deadlineDay": "2027-01-15",
+    "originalDeadlineText": "Erasmus Mundus scholarship application deadline - 15 January 2027",
+    "fieldEvidence": {
+      "deadlineDay": {
+        "sourceUrl": "https://www.euroculturemaster.eu/application-procedure",
+        "excerpt": "Erasmus Mundus scholarship application deadline - 15 January 2027",
+        "pageNumber": null
+      }
+    }
+  },
+  {
+    "institution": {
+      "key": "consorcio-imsoglo",
+      "name": "Consorcio IMSOGLO",
+      "websiteUrl": "https://imsoglo.eu"
+    },
+    "program": {
+      "key": "imsoglo",
+      "name": "IMSOGLO"
+    },
+    "editionKey": "2027",
+    "slug": "imsoglo-erasmus-mundus-2027",
+    "title": "IMSOGLO — Beca Erasmus Mundus 2027",
+    "summary": "Maestría en suelos y cambio global con beca Erasmus Mundus para el ingreso de septiembre de 2027.",
+    "sourceUrl": "https://imsoglo.eu/wp-content/uploads/2026/09/IMSOGLO-Application-Manual-2027.pdf",
+    "evidence": {
+      "sourceUrl": "https://imsoglo.eu/wp-content/uploads/2026/09/IMSOGLO-Application-Manual-2027.pdf",
+      "excerpt": "28 February 2027",
+      "pageNumber": null
+    },
+    "levels": [
+      "MASTER"
+    ],
+    "deadlineDay": "2027-02-28",
+    "originalDeadlineText": "28 February 2027",
+    "fieldEvidence": {
+      "deadlineDay": {
+        "sourceUrl": "https://imsoglo.eu/wp-content/uploads/2026/09/IMSOGLO-Application-Manual-2027.pdf",
+        "excerpt": "28 February 2027",
+        "pageNumber": null
+      }
+    }
+  },
+  {
+    "institution": {
+      "key": "consorcio-resco",
+      "name": "Consorcio RESCO",
+      "websiteUrl": "https://resco-master.eu"
+    },
+    "program": {
+      "key": "resco",
+      "name": "RESCO"
+    },
+    "editionKey": "2027",
+    "slug": "resco-erasmus-mundus-2027",
+    "title": "RESCO — Beca Erasmus Mundus 2027",
+    "summary": "La convocatoria con beca abre el 16 de noviembre de 2026. El consorcio indica febrero de 2027 como cierre sin precisar el día.",
+    "sourceUrl": "https://resco-master.eu/admission/deadlines/",
+    "evidence": {
+      "sourceUrl": "https://resco-master.eu/admission/deadlines/",
+      "excerpt": "Deadline: February 2027",
+      "pageNumber": null
+    },
+    "levels": [
+      "MASTER"
+    ]
+  },
+  {
+    "institution": {
+      "key": "consorcio-mundus-mapp",
+      "name": "Consorcio Mundus MAPP",
+      "websiteUrl": "https://www.mundusmapp.org"
+    },
+    "program": {
+      "key": "mundus-mapp",
+      "name": "Mundus MAPP"
+    },
+    "editionKey": "2027-2029",
+    "slug": "mundus-mapp-erasmus-mundus-2027-2029",
+    "title": "Mundus MAPP — Beca Erasmus Mundus 2027-2029",
+    "summary": "Maestría conjunta en políticas públicas. Se solicita financiación en la primera ronda a través de Central European University.",
+    "sourceUrl": "https://www.mundusmapp.org/admissions-calendar/",
+    "evidence": {
+      "sourceUrl": "https://www.mundusmapp.org/admissions-calendar/",
+      "excerpt": "December 1, 2026, 23:59 Central European Time (CET)",
+      "pageNumber": null
+    },
+    "levels": [
+      "MASTER"
+    ],
+    "deadlineDay": "2026-12-01",
+    "originalDeadlineText": "December 1, 2026, 23:59 Central European Time (CET)",
+    "fieldEvidence": {
+      "deadlineDay": {
+        "sourceUrl": "https://www.mundusmapp.org/admissions-calendar/",
+        "excerpt": "December 1, 2026, 23:59 Central European Time (CET)",
+        "pageNumber": null
+      }
+    }
+  }
+]
