@@ -15,7 +15,7 @@ for (const [key, value, expected] of filters) {
     await form.getByRole('combobox', { name: new RegExp(key === 'level' ? 'Nivel académico' : key === 'area' ? 'Área de estudio' : key === 'country' ? 'País de destino' : key === 'modality' ? 'Modalidad' : 'Cobertura') }).selectOption(value);
     await form.getByRole('button', { name: 'Aplicar filtros' }).click();
     await expect(page).toHaveURL(new RegExp(`${key}=${value}`));
-    await expect(page.getByRole('link', { name: expected })).toBeVisible();
+    await expect(page.locator('ul.cards li').getByRole('link', { name: expected })).toBeVisible();
     await expect(page.getByRole('status')).toContainText('1');
   });
 }

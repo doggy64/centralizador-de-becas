@@ -14,6 +14,7 @@ import {
   CatalogService,
   ScholarshipsController,
 } from "./scholarships";
+import { SearchJobsController } from "./search-jobs";
 import helmet from "helmet";
 import { rateLimit } from "express-rate-limit";
 import type { Response } from "express";
@@ -48,7 +49,7 @@ class HttpErrorFilter implements ExceptionFilter {
 }
 
 @Module({
-  controllers: [HealthController, ScholarshipsController],
+  controllers: [HealthController, ScholarshipsController, SearchJobsController],
   providers: [Database, CatalogService],
 })
 class AppModule {}

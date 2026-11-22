@@ -20,6 +20,7 @@ export async function importCandidate(
   input: unknown,
   actor: string,
   dryRun = false,
+  automatic = false,
 ) {
   operator(actor);
   const c = candidateSchema.parse(input);
@@ -97,6 +98,15 @@ export async function importCandidate(
         };
         await lock(tx, program.id + "|" + c.editionKey);
         const old = await tx.scholarship.findUnique({ where });
+        if (
+          automatic &&
+          old &&
+          (old.sourceUrl !== c.sourceUrl ||
+            (await tx.reviewEvent.count({
+              where: { callId: old.id, actor: { not: actor } },
+            })))
+        )
+          throw new Error("La edición tiene intervención editorial previa");
         const values = {
           title: c.title,
           summary: c.summary,
@@ -232,7 +242,7 @@ export async function importCandidate(
   } catch (error) {
     if (error !== rollback) throw error;
   }
-  return { id: dryRun ? null : id, dryRun };
+  return { id: dryRun ? null : id, dryRun, hash };
 }
 
 const transitions: Record<string, { from: Editorial[]; to: Editorial }> = {
@@ -248,6 +258,7 @@ export async function review(
   action: string,
   actor: string,
   note: string,
+  expectedHash?: string,
 ) {
   operator(actor);
   const rule = Object.hasOwn(transitions, action) ? transitions[action] : null;
@@ -262,6 +273,14 @@ export async function review(
         channels: true,
       },
     });
+    if (
+      expectedHash &&
+      (call.contentHash !== expectedHash ||
+        (await tx.reviewEvent.count({
+          where: { callId: call.id, actor: { not: actor } },
+        })))
+    )
+      throw new Error("La edición cambió durante la automatización");
     if (!rule.from.includes(call.status))
       throw new Error("Transición editorial inválida");
     if (
