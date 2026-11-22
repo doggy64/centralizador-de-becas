@@ -87,7 +87,7 @@ async function main() {
       };
       await db.source.upsert({
         where: { host: url.hostname },
-        update: policy,
+        update: { ...policy, officialUrl: url.href },
         create: {
           host: url.hostname,
           title: url.hostname,

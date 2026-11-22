@@ -158,17 +158,24 @@ export async function discover(
   const crawler = new BasicCrawler(
     {
       maxConcurrency: 1,
-      maxRequestsPerCrawl: 5,
+      // Follow a bounded set of same-host links so aggregator pages can lead
+      // to individual programme pages (root -> listing -> programme).
+      maxRequestsPerCrawl: 30,
       maxRequestRetries: 0,
       requestHandlerTimeoutSecs: 360,
       async requestHandler({ request, addRequests }) {
         const res = await get(request.url, allowed);
         if (res.mime !== "text/html") return;
         const page = extractHtml(res.body, res.url);
-        for (const link of page.links)
-          if (allowed.has(new URL(link).hostname)) found.add(link);
-        if (page.next && allowed.has(new URL(page.next).hostname))
-          await addRequests([page.next]);
+        const internal = page.links.filter((link) => {
+          const url = new URL(link);
+          return allowed.has(url.hostname) && url.protocol === "https:";
+        });
+        for (const link of internal) found.add(link);
+        const next = page.next && allowed.has(new URL(page.next).hostname)
+          ? [page.next]
+          : [];
+        await addRequests([...new Set([...internal, ...next])]);
       },
       async failedRequestHandler() {
         failed = true;

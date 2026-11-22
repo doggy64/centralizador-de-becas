@@ -1,0 +1,664 @@
+[
+  {
+    "institution": {
+      "key": "campus-france-bolivia",
+      "name": "Campus France Bolivia",
+      "websiteUrl": "https://www.bolivie.campusfrance.org/"
+    },
+    "program": {
+      "key": "france-excellence-bolivia",
+      "name": "Becas France Excellence Bolivia"
+    },
+    "editionKey": "2027-2028",
+    "slug": "france-excellence-bolivia-2027-2028",
+    "title": "Becas France Excellence Bolivia 2027-2028",
+    "summary": "Beca del Gobierno francés para que profesionales bolivianos cursen el segundo año de maestría en una universidad o Gran Escuela francesa desde septiembre de 2027. La fuente identifica el ciclo 2027-2028, pero contiene una fecha de cierre con un año inconsistente; la ficha queda pendiente de confirmar ese dato.",
+    "sourceUrl": "https://www.bolivie.campusfrance.org/convocatoria-becas-france-excellence-bolivia",
+    "evidence": {
+      "sourceUrl": "https://www.bolivie.campusfrance.org/convocatoria-becas-france-excellence-bolivia",
+      "excerpt": "La Embajada de Francia en Bolivia anuncia la apertura de su convocatoria anual para el programa de becas del Gobierno francés, para el año académico 2027-2028.",
+      "pageNumber": null
+    },
+    "levels": ["MASTER"],
+    "modality": "UNKNOWN",
+    "requirements": [
+      {
+        "label": "Ser de nacionalidad boliviana y no tener doble nacionalidad de la Unión Europea.",
+        "required": true,
+        "evidence": {
+          "sourceUrl": "https://www.bolivie.campusfrance.org/convocatoria-becas-france-excellence-bolivia",
+          "excerpt": "Ser de nacionalidad boliviana (no tener doble nacionalidad de la Unión Europea).",
+          "pageNumber": null
+        }
+      },
+      {
+        "label": "Acreditar francés DELF B2.",
+        "required": true,
+        "evidence": {
+          "sourceUrl": "https://www.bolivie.campusfrance.org/convocatoria-becas-france-excellence-bolivia",
+          "excerpt": "Conocimiento del idioma francés nivel DELF B2 (certificado).",
+          "pageNumber": null
+        }
+      },
+      {
+        "label": "Contar, como mínimo, con título de licenciatura o ingeniería.",
+        "required": true,
+        "evidence": {
+          "sourceUrl": "https://www.bolivie.campusfrance.org/convocatoria-becas-france-excellence-bolivia",
+          "excerpt": "Tener, como mínimo, el título de licenciatura o ingeniero.",
+          "pageNumber": null
+        }
+      }
+    ],
+    "benefits": [
+      {
+        "description": "Beca de estudios para cursar una maestría en una universidad o Gran Escuela francesa.",
+        "amount": null,
+        "currency": null,
+        "evidence": {
+          "sourceUrl": "https://www.bolivie.campusfrance.org/convocatoria-becas-france-excellence-bolivia",
+          "excerpt": "Los seleccionados para la beca se beneficiarán de una beca de estudios, para cursar una maestría en una Universidad o Gran Escuela francesa.",
+          "pageNumber": null
+        }
+      }
+    ],
+    "channels": [
+      {
+        "type": "EMAIL",
+        "purpose": "APPLY",
+        "target": "fabio.alvis-rodas@diplomatie.gouv.fr",
+        "evidence": {
+          "sourceUrl": "https://www.bolivie.campusfrance.org/convocatoria-becas-france-excellence-bolivia",
+          "excerpt": "Los expedientes de postulación completos deberán ser enviados al correo electrónico fabio.alvis-rodas@diplomatie.gouv.fr y lapazcampusfrance@gmail.com.",
+          "pageNumber": null
+        }
+      },
+      {
+        "type": "EMAIL",
+        "purpose": "APPLY",
+        "target": "lapazcampusfrance@gmail.com",
+        "evidence": {
+          "sourceUrl": "https://www.bolivie.campusfrance.org/convocatoria-becas-france-excellence-bolivia",
+          "excerpt": "Los expedientes de postulación completos deberán ser enviados al correo electrónico fabio.alvis-rodas@diplomatie.gouv.fr y lapazcampusfrance@gmail.com.",
+          "pageNumber": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": {
+      "key": "agcid-universidad-tarapaca",
+      "name": "AGCID y Universidad de Tarapacá",
+      "websiteUrl": "https://www.agcid.gob.cl/"
+    },
+    "program": {
+      "key": "beca-integracion-transfronteriza",
+      "name": "Beca de Integración Transfronteriza"
+    },
+    "editionKey": "2027",
+    "slug": "beca-integracion-transfronteriza-2027",
+    "title": "Beca de Integración Transfronteriza 2027",
+    "summary": "Beca completa de AGCID y la Universidad de Tarapacá para programas cuya duración varía según la alternativa elegida, con destino Chile.",
+    "sourceUrl": "https://egpp.gob.bo/wp-content/uploads/2026/11/Becas-06-de-noviembre.pdf",
+    "evidence": {
+      "sourceUrl": "https://egpp.gob.bo/wp-content/uploads/2026/11/Becas-06-de-noviembre.pdf",
+      "excerpt": "Universidad de Tarapacá / AGCID: Beca de Integración Transfronteriza - 2027, beca completa, Chile, plazo de postulación 08/01/2027.",
+      "pageNumber": null
+    },
+    "coverage": "FULL",
+    "deadlineDay": "2027-01-08",
+    "originalDeadlineText": "Plazo de postulación: 08/01/2027.",
+    "fieldEvidence": {
+      "deadlineDay": {
+        "sourceUrl": "https://egpp.gob.bo/wp-content/uploads/2026/11/Becas-06-de-noviembre.pdf",
+        "excerpt": "Beca de Integración Transfronteriza - 2027. Plazo de postulación: 08/01/2027.",
+        "pageNumber": null
+      },
+      "coverage": {
+        "sourceUrl": "https://egpp.gob.bo/wp-content/uploads/2026/11/Becas-06-de-noviembre.pdf",
+        "excerpt": "Beca de Integración Transfronteriza - 2027: tipo de beca COMPLETA.",
+        "pageNumber": null
+      }
+    },
+    "benefits": [
+      {
+        "description": "Beca completa; la duración varía según el programa elegido.",
+        "amount": null,
+        "currency": null,
+        "evidence": {
+          "sourceUrl": "https://egpp.gob.bo/wp-content/uploads/2026/11/Becas-06-de-noviembre.pdf",
+          "excerpt": "Beca de Integración Transfronteriza - 2027: COMPLETA. Duración: varía de acuerdo al programa.",
+          "pageNumber": null
+        }
+      }
+    ],
+    "channels": [
+      {
+        "type": "EMAIL",
+        "purpose": "CONTACT",
+        "target": "becas1@egpp.gob.bo",
+        "evidence": {
+          "sourceUrl": "https://egpp.gob.bo/oferta-de-becas/",
+          "excerpt": "Para mayor información, puede comunicarse a través del correo electrónico becas1@egpp.gob.bo.",
+          "pageNumber": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": {
+      "key": "programa-becas-china",
+      "name": "Programa de Becas de China",
+      "websiteUrl": "https://www.campuschina.org/"
+    },
+    "program": {
+      "key": "jovenes-sobresalientes",
+      "name": "Programa de Becas de China para Jóvenes Sobresalientes"
+    },
+    "editionKey": "2027-2028",
+    "slug": "becas-china-jovenes-sobresalientes-2027-2028",
+    "title": "Programa de Becas de China para Jóvenes Sobresalientes 2027-2028",
+    "summary": "La Embajada de China en Bolivia recibe candidaturas de licenciatura, maestría, doctorado y estudios de investigación mediante CGSIS, tipo A, agencia 0681. La beca cubre matrícula, alojamiento, manutención y seguro médico. Los pasajes internacionales y la visa corren por cuenta del postulante.",
+    "levels": ["UNDERGRADUATE", "MASTER", "DOCTORATE"],
+    "sourceUrl": "https://bo.china-embassy.gov.cn/esp/tzggg/202610/t20261029_12049592.htm",
+    "evidence": {
+      "sourceUrl": "https://bo.china-embassy.gov.cn/esp/tzggg/202610/t20261029_12049592.htm",
+      "excerpt": "La beca incluye los gastos de matrícula, alojamiento, manutención y seguro médico integral.",
+      "pageNumber": null
+    },
+    "coverage": "PARTIAL",
+    "deadlineDay": "2027-02-10",
+    "originalDeadlineText": "Plazo de postulación: 10/02/2027.",
+    "fieldEvidence": {
+      "deadlineDay": {
+        "sourceUrl": "https://egpp.gob.bo/wp-content/uploads/2026/11/Becas-06-de-noviembre.pdf",
+        "excerpt": "Programa de Becas de China para Jóvenes Sobresalientes 2027-2028. Plazo de postulación: 10/02/2027.",
+        "pageNumber": null
+      },
+      "coverage": {
+        "sourceUrl": "https://egpp.gob.bo/wp-content/uploads/2026/11/Becas-06-de-noviembre.pdf",
+        "excerpt": "Programa de Becas de China para Jóvenes Sobresalientes: tipo de beca PARCIAL.",
+        "pageNumber": null
+      }
+    },
+    "benefits": [
+      {
+        "description": "Beca parcial para estudios en diversas áreas.",
+        "amount": null,
+        "currency": null,
+        "evidence": {
+          "sourceUrl": "https://egpp.gob.bo/wp-content/uploads/2026/11/Becas-06-de-noviembre.pdf",
+          "excerpt": "Programa de Becas de China para Jóvenes Sobresalientes: beca parcial para diversas áreas.",
+          "pageNumber": null
+        }
+      }
+    ],
+    "channels": [
+      {
+        "type": "EMAIL",
+        "purpose": "CONTACT",
+        "target": "becas1@egpp.gob.bo",
+        "evidence": {
+          "sourceUrl": "https://egpp.gob.bo/oferta-de-becas/",
+          "excerpt": "Para mayor información, puede comunicarse a través del correo electrónico becas1@egpp.gob.bo.",
+          "pageNumber": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": {
+      "key": "organizacion-estados-americanos",
+      "name": "Organización de los Estados Americanos",
+      "websiteUrl": "https://www.oas.org/"
+    },
+    "program": {
+      "key": "oea-auwcl-llm",
+      "name": "Becas OEA-AUWCL para LL.M."
+    },
+    "editionKey": "primavera-2027-hibrida",
+    "slug": "becas-oea-auwcl-primavera-2027-hibrida",
+    "title": "Becas OEA-AUWCL LL.M. híbridas o en línea — Primavera 2027",
+    "summary": "Becas OEA-AUWCL para LL.M. en Derechos Humanos y Derecho Internacional Humanitario o International Arbitration and Business Law, con inicio en enero de 2027 en modalidad híbrida o en línea.",
+    "sourceUrl": "https://www.oas.org/es/becas/",
+    "evidence": {
+      "sourceUrl": "https://www.oas.org/es/becas/",
+      "excerpt": "OAS-AUWCL: Grados LL.M.; admisión y solicitud de la beca para primavera 2027 hasta el 30 de noviembre de 2026 para modalidad híbrida o en línea.",
+      "pageNumber": null
+    },
+    "levels": ["MASTER"],
+    "modality": "HYBRID",
+    "coverage": "PARTIAL",
+    "deadlineDay": "2026-11-30",
+    "originalDeadlineText": "Primavera 2027: 30 de noviembre de 2026 para modalidad híbrida o en línea.",
+    "fieldEvidence": {
+      "deadlineDay": {
+        "sourceUrl": "https://www.oas.org/es/becas/",
+        "excerpt": "Admisión y solicitud de la beca: Primavera 2027, 30 de noviembre de 2026 para modalidad híbrida o en línea.",
+        "pageNumber": null
+      },
+      "modality": {
+        "sourceUrl": "https://www.becas.com/oea-organizacion-de-los-estados-americanos/becas-oea-auwcl",
+        "excerpt": "Los estudios de Máster se desarrollarán en español o inglés, en modalidad presencial, híbrida u online.",
+        "pageNumber": null
+      },
+      "coverage": {
+        "sourceUrl": "https://www.becas.com/oea-organizacion-de-los-estados-americanos/becas-oea-auwcl",
+        "excerpt": "Las Becas OEA-AUWCL ofrecen un 50% de descuento en los costos de matrícula.",
+        "pageNumber": null
+      }
+    },
+    "requirements": [
+      {
+        "label": "Ser ciudadano o residente permanente de un Estado miembro de la OEA, excepto Estados Unidos y Nicaragua.",
+        "required": true,
+        "evidence": {
+          "sourceUrl": "https://www.becas.com/oea-organizacion-de-los-estados-americanos/becas-oea-auwcl",
+          "excerpt": "Ser ciudadano o residente permanente de cualquiera de los Estados Miembros de la OEA, excepto los Estados Unidos y Nicaragua.",
+          "pageNumber": null
+        }
+      },
+      {
+        "label": "Ser admitido en uno de los programas LL.M. ofrecidos por AUWCL.",
+        "required": true,
+        "evidence": {
+          "sourceUrl": "https://www.becas.com/oea-organizacion-de-los-estados-americanos/becas-oea-auwcl",
+          "excerpt": "Ser admitido en uno de los programas de LL.M. ofrecidos por AUWCL.",
+          "pageNumber": null
+        }
+      }
+    ],
+    "benefits": [
+      {
+        "description": "Descuento del 50% en los costos de matrícula.",
+        "amount": null,
+        "currency": null,
+        "evidence": {
+          "sourceUrl": "https://www.becas.com/oea-organizacion-de-los-estados-americanos/becas-oea-auwcl",
+          "excerpt": "Las Becas OEA-AUWCL ofrecen un 50% de descuento en los costos de matrícula.",
+          "pageNumber": null
+        }
+      }
+    ],
+    "channels": [
+      {
+        "type": "FORM_URL",
+        "purpose": "APPLY",
+        "target": "https://www.american.edu/wcl/academics/degrees/llm/how-to-apply/online.cfm",
+        "evidence": {
+          "sourceUrl": "https://www.becas.com/oea-organizacion-de-los-estados-americanos/becas-oea-auwcl",
+          "excerpt": "Complete su solicitud en la plataforma de aplicación de AUWCL junto con los documentos de respaldo antes de la fecha límite.",
+          "pageNumber": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": {
+      "key": "organizacion-estados-americanos",
+      "name": "Organización de los Estados Americanos",
+      "websiteUrl": "https://www.oas.org/"
+    },
+    "program": {
+      "key": "oea-universidad-desarrollo",
+      "name": "Becas OEA Universidad del Desarrollo"
+    },
+    "editionKey": "2026-2027",
+    "slug": "becas-oea-universidad-desarrollo-2026-2027",
+    "title": "Becas OEA Universidad del Desarrollo 2026-2027",
+    "summary": "Beca parcial para un curso en línea de innovación, sostenibilidad y cambio climático de la Universidad del Desarrollo, que se impartirá del 16 de marzo al 22 de junio de 2027.",
+    "sourceUrl": "https://www.oas.org/es/becas/",
+    "evidence": {
+      "sourceUrl": "https://www.oas.org/es/becas/",
+      "excerpt": "OAS-Universidad del Desarrollo: oportunidad de beca 2026-2027, curso virtual en inglés, plazo de postulación 31 de enero de 2027.",
+      "pageNumber": null
+    },
+    "modality": "ONLINE",
+    "coverage": "PARTIAL",
+    "deadlineDay": "2027-01-31",
+    "originalDeadlineText": "Plazo de postulación: 31 de enero de 2027.",
+    "fieldEvidence": {
+      "deadlineDay": {
+        "sourceUrl": "https://www.oas.org/es/becas/",
+        "excerpt": "OAS-Universidad del Desarrollo: plazo de postulación 31 de enero de 2027.",
+        "pageNumber": null
+      },
+      "modality": {
+        "sourceUrl": "https://www.becas.com/oea-organizacion-de-los-estados-americanos/becas-oea-universidad-del-desarrollo",
+        "excerpt": "El curso se desarrollará online a través de la plataforma Canvas de la UDD.",
+        "pageNumber": null
+      },
+      "coverage": {
+        "sourceUrl": "https://www.becas.com/oea-organizacion-de-los-estados-americanos/becas-oea-universidad-del-desarrollo",
+        "excerpt": "Las Becas OEA Universidad del Desarrollo cubrirán USD 3,400; el estudiante deberá cubrir USD 400 restantes.",
+        "pageNumber": null
+      }
+    },
+    "requirements": [
+      {
+        "label": "Ser ciudadano o residente permanente de un Estado miembro de la OEA, excepto Chile.",
+        "required": true,
+        "evidence": {
+          "sourceUrl": "https://www.becas.com/oea-organizacion-de-los-estados-americanos/becas-oea-universidad-del-desarrollo",
+          "excerpt": "Ser ciudadanos o residentes permanentes de un Estado miembro de la OEA, excepto Chile.",
+          "pageNumber": null
+        }
+      },
+      {
+        "label": "Contar con un buen dominio del inglés y formación o experiencia en gestión empresarial.",
+        "required": true,
+        "evidence": {
+          "sourceUrl": "https://www.becas.com/oea-organizacion-de-los-estados-americanos/becas-oea-universidad-del-desarrollo",
+          "excerpt": "Contar con una sólida formación o experiencia en gestión empresarial y tener un buen dominio del inglés.",
+          "pageNumber": null
+        }
+      }
+    ],
+    "benefits": [
+      {
+        "description": "Cobertura de USD 3,400 del curso; el estudiante aporta USD 400 restantes.",
+        "amount": 3400,
+        "currency": "USD",
+        "evidence": {
+          "sourceUrl": "https://www.becas.com/oea-organizacion-de-los-estados-americanos/becas-oea-universidad-del-desarrollo",
+          "excerpt": "Las Becas OEA Universidad del Desarrollo cubrirán la cuantía de USD 3,400; el coste restante de USD 400 deberá ser cubierto por los estudiantes.",
+          "pageNumber": null
+        }
+      }
+    ],
+    "channels": [
+      {
+        "type": "FORM_URL",
+        "purpose": "APPLY",
+        "target": "https://www.oas.org/fms/Announcement.aspx?id=1155&Type=4&Lang=Eng",
+        "evidence": {
+          "sourceUrl": "https://www.becas.com/oea-organizacion-de-los-estados-americanos/becas-oea-universidad-del-desarrollo",
+          "excerpt": "La solicitud en línea se realizará a través de la página de anuncios de la OEA.",
+          "pageNumber": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": {
+      "key": "swedish-institute",
+      "name": "Swedish Institute",
+      "websiteUrl": "https://si.se/"
+    },
+    "program": {
+      "key": "si-scholarship-global-professionals",
+      "name": "SI Scholarship for Global Professionals"
+    },
+    "editionKey": "2027-2028",
+    "slug": "si-scholarship-global-professionals-2027-2028",
+    "title": "SI Scholarship for Global Professionals 2027-2028",
+    "summary": "Beca del Swedish Institute para maestrías de tiempo completo en inglés en Suecia, dirigida a profesionales bolivianos con experiencia laboral y liderazgo.",
+    "sourceUrl": "https://becasyconvocatorias.org/becas-del-gobierno-de-suecia/",
+    "evidence": {
+      "sourceUrl": "https://becasyconvocatorias.org/becas-del-gobierno-de-suecia/",
+      "excerpt": "El Gobierno de Suecia ofrece las SI Scholarship for Global Professionals para profesionales que quieran cursar una maestría y contribuir al desarrollo sostenible de sus países.",
+      "pageNumber": null
+    },
+    "levels": ["MASTER"],
+    "modality": "ON_SITE",
+    "coverage": "FULL",
+    "deadlineDay": "2027-02-24",
+    "originalDeadlineText": "Solicitud de beca al Swedish Institute: del 8 al 24 de febrero de 2027.",
+    "fieldEvidence": {
+      "deadlineDay": {
+        "sourceUrl": "https://becasyconvocatorias.org/becas-del-gobierno-de-suecia/",
+        "excerpt": "Solicitud de beca al Swedish Institute: del 8 al 24 de febrero de 2027.",
+        "pageNumber": null
+      },
+      "modality": {
+        "sourceUrl": "https://becasyconvocatorias.org/becas-del-gobierno-de-suecia/",
+        "excerpt": "La financiación está destinada a maestrías de tiempo completo, impartidas en inglés y con duración de uno o dos años.",
+        "pageNumber": null
+      },
+      "coverage": {
+        "sourceUrl": "https://becasyconvocatorias.org/becas-del-gobierno-de-suecia/",
+        "excerpt": "Los beneficios incluyen el 100% de la matrícula, manutención mensual y un aporte de viaje para beneficiarios latinoamericanos.",
+        "pageNumber": null
+      }
+    },
+    "requirements": [
+      {
+        "label": "Ser ciudadano boliviano o de otro país elegible del programa.",
+        "required": true,
+        "evidence": {
+          "sourceUrl": "https://becasyconvocatorias.org/becas-del-gobierno-de-suecia/",
+          "excerpt": "Entre los países elegibles se encuentran Bolivia, Brasil, Colombia, Ecuador, Guatemala, México y Perú.",
+          "pageNumber": null
+        }
+      },
+      {
+        "label": "Demostrar al menos 3,000 horas de experiencia laboral acumulada antes de febrero de 2027.",
+        "required": true,
+        "evidence": {
+          "sourceUrl": "https://becasyconvocatorias.org/becas-del-gobierno-de-suecia/",
+          "excerpt": "Para los postulantes de estos países latinoamericanos se requieren al menos 3.000 horas de experiencia laboral acumuladas antes de febrero de 2027.",
+          "pageNumber": null
+        }
+      }
+    ],
+    "benefits": [
+      {
+        "description": "Matrícula completa pagada directamente a la universidad.",
+        "amount": null,
+        "currency": null,
+        "evidence": {
+          "sourceUrl": "https://becasyconvocatorias.org/becas-del-gobierno-de-suecia/",
+          "excerpt": "El 100% de la matrícula, pagado directamente a la universidad.",
+          "pageNumber": null
+        }
+      },
+      {
+        "description": "Manutención mensual durante el periodo financiado.",
+        "amount": 12000,
+        "currency": "SEK",
+        "evidence": {
+          "sourceUrl": "https://becasyconvocatorias.org/becas-del-gobierno-de-suecia/",
+          "excerpt": "12.000 coronas suecas (SEK) mensuales para gastos de manutención.",
+          "pageNumber": null
+        }
+      },
+      {
+        "description": "Aporte único de viaje para beneficiarios latinoamericanos.",
+        "amount": 15000,
+        "currency": "SEK",
+        "evidence": {
+          "sourceUrl": "https://becasyconvocatorias.org/becas-del-gobierno-de-suecia/",
+          "excerpt": "Un aporte único de 15.000 SEK para viaje para los beneficiarios latinoamericanos.",
+          "pageNumber": null
+        }
+      }
+    ],
+    "channels": [
+      {
+        "type": "PORTAL_URL",
+        "purpose": "APPLY",
+        "target": "https://si.se/en/apply/scholarships/swedish-institute-study-scholarships/",
+        "evidence": {
+          "sourceUrl": "https://becasyconvocatorias.org/becas-del-gobierno-de-suecia/",
+          "excerpt": "La postulación al Swedish Institute se realiza en su propio portal durante el periodo establecido en febrero.",
+          "pageNumber": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": {
+      "key": "karolinska-institutet",
+      "name": "Karolinska Institutet",
+      "websiteUrl": "https://education.ki.se/"
+    },
+    "program": {
+      "key": "ki-global-masters-scholarship",
+      "name": "KI Global Master's Scholarship"
+    },
+    "editionKey": "2027",
+    "slug": "ki-global-masters-scholarship-2027",
+    "title": "KI Global Master's Scholarship 2027",
+    "summary": "Beca de matrícula para maestrías elegibles del Karolinska Institutet, abierta a estudiantes de América Latina que deban pagar matrícula para iniciar estudios en otoño de 2027.",
+    "sourceUrl": "https://becasyconvocatorias.org/becas-para-maestria-en-suecia-karolinska-institutet/",
+    "evidence": {
+      "sourceUrl": "https://becasyconvocatorias.org/becas-para-maestria-en-suecia-karolinska-institutet/",
+      "excerpt": "La convocatoria KI Global Master's Scholarship está abierta a estudiantes de América Latina que deban pagar matrícula durante todo el programa.",
+      "pageNumber": null
+    },
+    "levels": ["MASTER"],
+    "modality": "ON_SITE",
+    "coverage": "PARTIAL",
+    "deadlineDay": "2027-02-24",
+    "originalDeadlineText": "Solicitud de beca directamente al Karolinska Institutet del 8 al 24 de febrero de 2027.",
+    "fieldEvidence": {
+      "deadlineDay": {
+        "sourceUrl": "https://becasyconvocatorias.org/becas-para-maestria-en-suecia-karolinska-institutet/",
+        "excerpt": "Solicitar la beca directamente al Karolinska Institutet del 8 al 24 de febrero de 2027.",
+        "pageNumber": null
+      },
+      "modality": {
+        "sourceUrl": "https://becasyconvocatorias.org/becas-para-maestria-en-suecia-karolinska-institutet/",
+        "excerpt": "Maestrías en inglés en Suecia a partir del otoño de 2027.",
+        "pageNumber": null
+      },
+      "coverage": {
+        "sourceUrl": "https://becasyconvocatorias.org/becas-para-maestria-en-suecia-karolinska-institutet/",
+        "excerpt": "Las becas cubren el 100 % de la matrícula; viaje, alojamiento y manutención corren por cuenta del estudiante.",
+        "pageNumber": null
+      }
+    },
+    "requirements": [
+      {
+        "label": "Tener un título de pregrado equivalente a 180 créditos europeos y cumplir los requisitos académicos del programa.",
+        "required": true,
+        "evidence": {
+          "sourceUrl": "https://becasyconvocatorias.org/becas-para-maestria-en-suecia-karolinska-institutet/",
+          "excerpt": "Para ingresar a una maestría se requiere un título de pregrado equivalente a un grado sueco de 180 créditos europeos y cumplir los requisitos académicos del programa elegido.",
+          "pageNumber": null
+        }
+      },
+      {
+        "label": "Acreditar el nivel de inglés exigido y elegir una maestría del Karolinska Institutet como primera opción.",
+        "required": true,
+        "evidence": {
+          "sourceUrl": "https://becasyconvocatorias.org/becas-para-maestria-en-suecia-karolinska-institutet/",
+          "excerpt": "Es indispensable elegir una maestría del Karolinska Institutet como primera opción en la solicitud de admisión.",
+          "pageNumber": null
+        }
+      }
+    ],
+    "benefits": [
+      {
+        "description": "Cobertura del 100% de la matrícula de la maestría.",
+        "amount": null,
+        "currency": null,
+        "evidence": {
+          "sourceUrl": "https://becasyconvocatorias.org/becas-para-maestria-en-suecia-karolinska-institutet/",
+          "excerpt": "Ofrece becas que cubren el 100 % de la matrícula para cursar una maestría en inglés en Suecia.",
+          "pageNumber": null
+        }
+      }
+    ],
+    "channels": [
+      {
+        "type": "PORTAL_URL",
+        "purpose": "APPLY",
+        "target": "https://education.ki.se/bachelors-masters-studies/scholarships",
+        "evidence": {
+          "sourceUrl": "https://becasyconvocatorias.org/becas-para-maestria-en-suecia-karolinska-institutet/",
+          "excerpt": "La solicitud de beca se realiza directamente al Karolinska Institutet después de solicitar la admisión mediante University Admissions.",
+          "pageNumber": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": {
+      "key": "campus-france-eiffel",
+      "name": "Campus France",
+      "websiteUrl": "https://www.campusfrance.org/"
+    },
+    "program": {
+      "key": "france-excellence-eiffel",
+      "name": "Becas de Excelencia Eiffel"
+    },
+    "editionKey": "2027",
+    "slug": "becas-france-excellence-eiffel-2027",
+    "title": "Becas de Excelencia Eiffel 2027",
+    "summary": "Programa France Excellence Eiffel para estudios de maestría y doctorado en Francia. La candidatura debe ser presentada por una institución francesa de educación superior.",
+    "sourceUrl": "https://becasyconvocatorias.org/campus-france-becas-para-estudiar-en-francia-eiffel/",
+    "evidence": {
+      "sourceUrl": "https://becasyconvocatorias.org/campus-france-becas-para-estudiar-en-francia-eiffel/",
+      "excerpt": "El Gobierno de Francia abrió la convocatoria France Excellence Eiffel 2027, dirigida a estudiantes internacionales de alto desempeño académico que desean realizar estudios de maestría o doctorado.",
+      "pageNumber": null
+    },
+    "levels": ["MASTER", "DOCTORATE"],
+    "modality": "ON_SITE",
+    "coverage": "PARTIAL",
+    "deadlineDay": "2027-01-06",
+    "originalDeadlineText": "Las instituciones francesas tienen hasta el 6 de enero de 2027 para presentar las candidaturas ante Campus France.",
+    "fieldEvidence": {
+      "deadlineDay": {
+        "sourceUrl": "https://becasyconvocatorias.org/campus-france-becas-para-estudiar-en-francia-eiffel/",
+        "excerpt": "Las instituciones francesas tienen hasta el 6 de enero de 2027 para presentar las candidaturas ante Campus France.",
+        "pageNumber": null
+      },
+      "modality": {
+        "sourceUrl": "https://becasyconvocatorias.org/campus-france-becas-para-estudiar-en-francia-eiffel/",
+        "excerpt": "La beca financia estudios de maestría o doctorado en instituciones francesas.",
+        "pageNumber": null
+      },
+      "coverage": {
+        "sourceUrl": "https://becasyconvocatorias.org/campus-france-becas-para-estudiar-en-francia-eiffel/",
+        "excerpt": "La beca Eiffel no cubre los costos de matrícula o formación.",
+        "pageNumber": null
+      }
+    },
+    "requirements": [
+      {
+        "label": "Contar con el respaldo y la postulación de una institución francesa de educación superior.",
+        "required": true,
+        "evidence": {
+          "sourceUrl": "https://becasyconvocatorias.org/campus-france-becas-para-estudiar-en-francia-eiffel/",
+          "excerpt": "Únicamente las instituciones francesas de educación superior pueden remitir candidaturas al programa Eiffel.",
+          "pageNumber": null
+        }
+      }
+    ],
+    "benefits": [
+      {
+        "description": "Asignación mensual para estudios de maestría.",
+        "amount": 1200,
+        "currency": "EUR",
+        "evidence": {
+          "sourceUrl": "https://becasyconvocatorias.org/campus-france-becas-para-estudiar-en-francia-eiffel/",
+          "excerpt": "Maestría: 1.200 euros mensuales.",
+          "pageNumber": null
+        }
+      },
+      {
+        "description": "Asignación mensual para estudios de doctorado.",
+        "amount": 2100,
+        "currency": "EUR",
+        "evidence": {
+          "sourceUrl": "https://becasyconvocatorias.org/campus-france-becas-para-estudiar-en-francia-eiffel/",
+          "excerpt": "Doctorado: 2.100 euros mensuales.",
+          "pageNumber": null
+        }
+      }
+    ],
+    "channels": [
+      {
+        "type": "PORTAL_URL",
+        "purpose": "APPLY",
+        "target": "https://www.campusfrance.org/fr/la-bourse-france-excellence-eiffel",
+        "evidence": {
+          "sourceUrl": "https://becasyconvocatorias.org/campus-france-becas-para-estudiar-en-francia-eiffel/",
+          "excerpt": "El primer paso es identificar una formación elegible y contactar al departamento de relaciones internacionales o admisiones de la institución francesa.",
+          "pageNumber": null
+        }
+      }
+    ]
+  }
+]
