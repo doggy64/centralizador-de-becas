@@ -9,6 +9,9 @@ import {
   Module,
 } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
+import {Database,CatalogService,ScholarshipsController} from "./scholarships";
+import helmet from "helmet";
+import {rateLimit} from "express-rate-limit";
 import type { Response } from "express";
 
 @Controller()
@@ -40,12 +43,16 @@ class HttpErrorFilter implements ExceptionFilter {
   }
 }
 
-@Module({ controllers: [HealthController] })
+@Module({ controllers: [HealthController,ScholarshipsController],providers:[Database,CatalogService] })
 class AppModule {}
 
 export async function createApp() {
   const app = await NestFactory.create(AppModule, { logger: false });
+  app.use(helmet());
+  app.enableCors({origin:(process.env.CORS_ORIGINS??"http://localhost:3000").split(","),methods:["GET","HEAD"]});
+  app.use(rateLimit({windowMs:60000,limit:120,standardHeaders:"draft-7",legacyHeaders:false,message:{error:{code:"RATE_LIMIT",message:"Demasiadas solicitudes"}}}));
   app.useGlobalFilters(new HttpErrorFilter());
   app.enableShutdownHooks();
   return app;
 }
+

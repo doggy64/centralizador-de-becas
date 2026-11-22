@@ -8,7 +8,7 @@
     "lint": "eslint src test",
     "start": "node dist/main.js",
     "test": "pnpm build && jest --runInBand",
-    "test:integration": "pnpm test --testPathPatterns=http",
+    "test:integration": "jest --runInBand --testRegex database.integration.cjs$",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate deploy",
     "db:seed": "node prisma/seed.cjs"
