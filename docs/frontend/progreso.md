@@ -21,6 +21,10 @@
 
 ## Evidencia de aceptación frontend
 
+MVP-007 a MVP-011 incorporan filtros individuales por nivel, área, país de destino, modalidad y cobertura. Los valores provienen de los catálogos de la API. La URL conserva el término de búsqueda y descarta parámetros vacíos. Lint, typecheck y build pasaron. Las 12 pruebas Playwright específicas pasaron en escritorio y móvil.
+
+MVP-015 amplía la ficha con organizador, programa, edición, nivel, destino y modalidad del contrato. Los valores ausentes usan «No especificado». Lint y typecheck pasaron. Las cuatro pruebas Playwright de ficha pasaron en escritorio y móvil.
+
 MVP-006 incorpora navegación de páginas desde los metadatos de la API. Los enlaces preservan la consulta y quedan inactivos cuando no existe una página anterior o siguiente. Pasaron lint, typecheck, build, 3 pruebas HTTP/parámetros y 16 E2E. La evidencia visual se generó durante la prueba de escritorio y móvil. Rama `feat/dev1/s2-MVP-006-paginacion`, dependiente de MVP-004.
 
 MVP-004 muestra el total y el término aplicado. La prueba consulta INGENIERIA, edita a medicina, recarga la URL, vacía el término y busca por institución y programa. Pasaron lint, typecheck, build, 3 pruebas HTTP/parámetros y 14 E2E. Capturas en `evidencia/MVP-004/`. Playwright produjo un aviso de hidratación asociado a su estilo temporal caret-color durante capturas. La tolerancia de acentos se verificó contra el mock y sigue pendiente contra la API real. Rama `feat/dev1/s2-MVP-004-busqueda`, dependiente del PR #3.
