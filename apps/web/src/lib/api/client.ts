@@ -17,11 +17,7 @@ export class ScholarshipApiError extends Error {
 export function getApiBaseUrl(): string {
   const configured = process.env.API_BASE_URL;
   if (configured) {
-    const url = new URL(configured);
-    if (process.env.NODE_ENV === 'production' && ['127.0.0.1', 'localhost'].includes(url.hostname)) {
-      throw new Error('API_BASE_URL no puede apuntar a una API mock local en producción');
-    }
-    return url.origin;
+    return new URL(configured).origin;
   }
   if (process.env.NODE_ENV !== 'production') return 'http://127.0.0.1:4010';
   throw new Error('Falta configurar API_BASE_URL para producción');
