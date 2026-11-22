@@ -1,4 +1,4 @@
-import { getApiBaseUrl } from '../../../../lib/api/client';
+import { getApiBaseUrl } from '../../../lib/api/client';
 import { NextResponse } from 'next/server';
 
 /**
