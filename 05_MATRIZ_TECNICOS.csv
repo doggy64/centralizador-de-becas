@@ -1,0 +1,16 @@
+﻿ID,Titulo,Prioridad,Fase,Dueno_Codigo,Colaboracion,Ruta
+TEC-01,"Fuentes institucionales (P0, S1)",P0,S1,DEV2,Sin cambios en web,apps/api/** + apps/worker/** + infra/**
+TEC-02,"Modelo relacional (P0, S1)",P0,S1,DEV2,Sin cambios en web,apps/api/** + apps/worker/** + infra/**
+TEC-03,"Carga editorial inicial (P0, S1)",P0,S1,DEV2,Sin cambios en web,apps/api/** + apps/worker/** + infra/**
+TEC-04,"API pública de lectura (P0, S2)",P0,S2,DEV2,DEV1 revisa contrato de API,apps/api/** + apps/worker/** + infra/**
+TEC-05,"Extractor HTML inicial (P0, S2)",P0,S2,DEV2,Sin cambios en web,apps/api/** + apps/worker/** + infra/**
+TEC-06,"Extractor PDF (P0, S2)",P0,S2,DEV2,Sin cambios en web,apps/api/** + apps/worker/** + infra/**
+TEC-07,"Estructura y evidencias (P0, S2)",P0,S2,DEV2,Sin cambios en web,apps/api/** + apps/worker/** + infra/**
+TEC-08,"IA asistida opcional (P1, S3)",P1,P1,DEV2,Sin cambios en web,apps/api/** + apps/worker/** + infra/**
+TEC-09,"Verificación editorial (P0, S3)",P0,S3,DEV2,DEV1 revisa contrato de API,apps/api/** + apps/worker/** + infra/**
+TEC-10,"Vigencia y deduplicación (P0, S3)",P0,S3,DEV2,DEV1 revisa contrato de API,apps/api/** + apps/worker/** + infra/**
+TEC-11,"Revisión de enlaces (P0, S3)",P0,S3,DEV2,DEV1 revisa contrato de API,apps/api/** + apps/worker/** + infra/**
+TEC-12,"Seguridad y privacidad (P0, S4)",P0,S4,DEV2,Sin cambios en web,apps/api/** + apps/worker/** + infra/**
+TEC-13,"QA funcional y E2E (P0, S4)",P0,S4,DEV2,DEV1 aporta E2E desde apps/web,apps/api/** + .github/**; apps/web/** por DEV1
+TEC-14,"Despliegue y respaldo (P0, S4)",P0,S4,DEV2,Sin cambios en web,apps/api/** + apps/worker/** + infra/**
+TEC-15,"Guía operativa de publicación (P0, S4)",P0,S4,DEV2,Sin cambios en web,apps/api/** + apps/worker/** + infra/**
