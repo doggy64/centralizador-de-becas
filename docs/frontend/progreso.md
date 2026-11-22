@@ -21,6 +21,8 @@
 
 ## Evidencia de aceptación frontend
 
+MVP-029 y MVP-030 refuerzan los objetivos táctiles, el salto al contenido, el foco de `main`, la navegación de catálogo por teclado y la adaptación a 360 px. Lint y typecheck pasaron. Las cuatro pruebas Playwright de accesibilidad y diseño móvil pasaron en escritorio y móvil. Rama `feat/dev1/s4-MVP-029-030-accesibilidad`.
+
 MVP-024, MVP-025 y MVP-026 distinguen edición vigente, representan CLOSED de forma visual y anuncian los datos pendientes de verificación. No se recalcula vigencia en la web. Lint y typecheck pasaron. Las seis pruebas Playwright de ficha pasaron en escritorio y móvil. Rama `feat/dev1/s3-MVP-024-025-026-edicion-estados`.
 
 MVP-020 y MVP-021 presentan el acceso de postulación solo con canal APPLY y VERIFIED. Los portales se anuncian como destinos externos, los correos usan mailto y los canales pendientes no generan CTA. Lint y typecheck pasaron. Las seis pruebas Playwright públicas pasaron en escritorio y móvil. Rama `feat/dev1/s3-MVP-020-021-postulacion-segura`.

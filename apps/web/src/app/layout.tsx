@@ -2,7 +2,10 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import './styles.css';
 
-export const metadata = { title: 'Centralizador de Becas', description: 'Busca convocatorias y consulta cómo postular.' };
+export const metadata = {
+  title: { default: 'Centralizador de Becas', template: '%s | Centralizador de Becas' },
+  description: 'Busca convocatorias y consulta cómo postular.',
+};
 
 export default function Layout({ children }: { children: ReactNode }) {
   return <html lang="es"><body>
@@ -11,7 +14,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <Link className="brand" href="/">Centralizador de Becas</Link>
       <Link href="/becas">Catálogo</Link>
     </nav></header>
-    <main id="contenido">{children}</main>
+    <main id="contenido" tabIndex={-1}>{children}</main>
     <footer>Centralizador de Becas</footer>
   </body></html>;
 }
