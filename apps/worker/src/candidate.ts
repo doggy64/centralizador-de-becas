@@ -9,7 +9,7 @@ const proof = z.object({sourceUrl:httpsUrl, excerpt:line.nullable(), pageNumber:
 const item = z.object({label:line,required:z.boolean().nullable(),evidence:proof}).strict();
 const date = z.string().date();
 const country = z.string().regex(/^[A-Z]{2}$/);
-export const candidateSchema = z.object({
+export const candidateFields = z.object({
  institution:z.object({key,name:line,websiteUrl:httpsUrl.nullable()}).strict(),
  program:z.object({key,name:line}).strict(), editionKey:line.max(100), slug:key,
  title:line,summary:line,sourceUrl:httpsUrl,evidence:proof,
@@ -21,7 +21,8 @@ export const candidateSchema = z.object({
  requirements:z.array(item).max(100).default([]),documents:z.array(item).max(100).default([]),
  benefits:z.array(z.object({description:line,amount:z.number().nonnegative().nullable(),currency:z.string().regex(/^[A-Z]{3}$/).nullable(),evidence:proof}).strict()).max(100).default([]),
  channels:z.array(z.object({type:z.enum(["FORM_URL","PORTAL_URL","EMAIL"]),purpose:z.enum(["APPLY","CONTACT"]),target:line,evidence:proof}).strict().refine(c=>c.type==="EMAIL"?z.string().email().safeParse(c.target).success:httpsUrl.safeParse(c.target).success)).max(30).default([]),
-}).strict().superRefine((v,ctx)=>{
+}).strict();
+export const candidateSchema = candidateFields.superRefine((v,ctx)=>{
  if(v.deadlineDay && v.deadlineAt)ctx.addIssue({code:"custom",message:"El cierre debe tener una sola precisión"});
  if(v.deadlineDay && v.startDate && v.deadlineDay<v.startDate)ctx.addIssue({code:"custom",message:"Cierre anterior a apertura"});
  if(v.deadlineDay && !v.originalDeadlineText)ctx.addIssue({code:"custom",message:"Falta texto original del plazo"});
@@ -29,3 +30,4 @@ export const candidateSchema = z.object({
 });
 export type Candidate = z.infer<typeof candidateSchema>;
 export type Proof = Candidate["evidence"];
+

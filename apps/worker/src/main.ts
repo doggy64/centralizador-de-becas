@@ -1,6 +1,8 @@
 import {parseArgs} from "node:util";
 import {readFile} from "node:fs/promises";
 import {PrismaClient} from "@prisma/client";
+import {discover,ingest} from "./extract";
+import {httpsUrl} from "./candidate";
 import {importCandidate, review, verifyChannel} from "./editorial";
 
 async function main(){
@@ -15,6 +17,9 @@ async function main(){
  const db=new PrismaClient();
  try{
  if(action==="import")console.log(await importCandidate(db,JSON.parse(await readFile(arg,"utf8")),actor,values["dry-run"]));
+ else if(action==="discover")console.log(JSON.stringify(await discover(db,arg)));
+ else if(action==="ingest")console.log(await ingest(db,arg,JSON.parse(await readFile(decision,"utf8")),actor));
+ else if(action==="source"){const url=new URL(httpsUrl.parse(arg));if(!actor.trim()||!note.trim()||!["manual","crawl","disable"].includes(decision))throw new Error("Se requiere política, operador y motivo");const policy={approved:decision!=="disable",crawlAllowed:decision==="crawl",policyNote:JSON.stringify({actor,note,at:new Date()})};await db.source.upsert({where:{host:url.hostname},update:policy,create:{host:url.hostname,title:url.hostname,officialUrl:url.href,...policy}});}
  else if(action==="inspect")console.log(JSON.stringify(await db.scholarship.findUniqueOrThrow({where:{slug:arg},include:{program:{include:{institution:true}},source:true,levels:true,areas:true,countries:true,requirements:true,benefits:true,channels:true,evidence:true,events:true}}),null,2));
  else if(action==="channel" && (decision==="VERIFIED"||decision==="INVALID"||decision==="STALE"))await verifyChannel(db,arg,actor,note,decision);
  else await review(db,arg,action,actor,note);
@@ -25,3 +30,4 @@ main().catch((error:unknown)=>{
  console.error(controlled?error.message:"Operación rechazada. Revise la entrada, configuración y estado de la base.");
  process.exitCode=2;
 });
+

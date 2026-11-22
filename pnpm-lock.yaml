@@ -78,6 +78,9 @@ importers:
 
   apps/worker:
     dependencies:
+      '@crawlee/basic':
+        specifier: 3.15.3
+        version: 3.15.3
       '@crawlee/core':
         specifier: 3.15.3
         version: 3.15.3
@@ -305,6 +308,10 @@ packages:
 
   '@borewit/text-codec@0.2.3':
     resolution: {integrity: sha512-49CycTz1aAZmvFcwkeFyhud1HUmRIB5Tabf7ALV+VA4Iu85MTfz2cUwzPagMFAdVBvrWdkCxG67I30tUwwpKsw==}
+
+  '@crawlee/basic@3.15.3':
+    resolution: {integrity: sha512-+j0rhP16Gx84eFFXnG2t0YxmwkIwz5cWFnJ6CFyj1F7ElQ5JmVkzxyIWoyKBWCmLpPlafySht1tKq7L/4EZ1AQ==}
+    engines: {node: '>=16.0.0'}
 
   '@crawlee/core@3.15.3':
     resolution: {integrity: sha512-cBglpY4KVlKnozeO8K4lw6/TDWajtJjPj4aNfckxUeEzapJgvTaxg6ZI4zxir6vic8sTeK9Olp3qG3wLnlrtXw==}
@@ -3002,6 +3009,24 @@ snapshots:
   '@bcoe/v8-coverage@0.2.3': {}
 
   '@borewit/text-codec@0.2.3': {}
+
+  '@crawlee/basic@3.15.3':
+    dependencies:
+      '@apify/log': 2.5.54
+      '@apify/timeout': 0.3.5
+      '@apify/utilities': 2.35.11
+      '@crawlee/core': 3.15.3
+      '@crawlee/types': 3.15.3
+      '@crawlee/utils': 3.15.3
+      csv-stringify: 6.9.0
+      fs-extra: 11.4.1
+      got-scraping: 4.2.2
+      ow: 0.28.2
+      tldts: 7.5.5
+      tslib: 2.9.1
+      type-fest: 4.41.0
+    transitivePeerDependencies:
+      - supports-color
 
   '@crawlee/core@3.15.3':
     dependencies:

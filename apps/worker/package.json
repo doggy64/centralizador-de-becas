@@ -10,11 +10,12 @@
     "test": "pnpm build && jest --runInBand"
   },
   "dependencies": {
-    "@prisma/client": "6.19.3",
-    "zod": "3.25.76",
-    "cheerio": "1.1.2",
+    "@crawlee/basic": "3.15.3",
     "@crawlee/core": "3.15.3",
+    "@prisma/client": "6.19.3",
+    "cheerio": "1.1.2",
     "ipaddr.js": "2.3.0",
-    "robots-parser": "3.0.1"
+    "robots-parser": "3.0.1",
+    "zod": "3.25.76"
   }
 }
