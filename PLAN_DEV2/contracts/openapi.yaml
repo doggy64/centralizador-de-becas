@@ -1,0 +1,245 @@
+openapi: 3.0.3
+info:
+  title: Becas MVP — contrato público de lectura
+  version: 1.0.0
+  description: >-
+    Especificación propuesta de contrato estable para desarrollo paralelo.
+    Todas las convocatorias expuestas por estos endpoints deben estar publicadas.
+servers:
+  - url: http://localhost:3001
+paths:
+  /health:
+    get:
+      operationId: getHealth
+      summary: Healthcheck
+      responses:
+        '200':
+          description: API disponible
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [status]
+                properties:
+                  status: { type: string, enum: [ok] }
+  /api/v1/scholarships:
+    get:
+      operationId: searchScholarships
+      summary: Consultar convocatorias publicadas
+      parameters:
+        - { name: q, in: query, schema: { type: string, maxLength: 120 } }
+        - { name: level, in: query, schema: { type: string } }
+        - { name: area, in: query, schema: { type: string } }
+        - { name: country, in: query, schema: { type: string, minLength: 2, maxLength: 2 } }
+        - { name: modality, in: query, schema: { $ref: '#/components/schemas/Modality' } }
+        - { name: coverage, in: query, schema: { $ref: '#/components/schemas/Coverage' } }
+        - { name: status, in: query, schema: { $ref: '#/components/schemas/TemporalStatus' } }
+        - { name: page, in: query, schema: { type: integer, minimum: 1, default: 1 } }
+        - { name: limit, in: query, schema: { type: integer, minimum: 1, maximum: 48, default: 12 } }
+      responses:
+        '200':
+          description: Lista filtrada, paginada y sin duplicación de ediciones
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ScholarshipSearchResponse' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '500': { $ref: '#/components/responses/ServerError' }
+  /api/v1/scholarships/{slug}:
+    get:
+      operationId: getScholarshipBySlug
+      summary: Ficha de una edición publicada
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema: { type: string, minLength: 1, maxLength: 200 }
+      responses:
+        '200':
+          description: Ficha verificada; valores no confirmados se devuelven como null
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ScholarshipDetail' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '500': { $ref: '#/components/responses/ServerError' }
+  /api/v1/catalogs/filters:
+    get:
+      operationId: getScholarshipFilters
+      summary: Opciones de filtros normalizados
+      responses:
+        '200':
+          description: Catálogos para UI
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/FilterCatalogResponse' }
+        '500': { $ref: '#/components/responses/ServerError' }
+components:
+  responses:
+    BadRequest:
+      description: Parámetros inválidos
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/ApiError' }
+    NotFound:
+      description: Slug inexistente o convocatoria no publicada
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/ApiError' }
+    ServerError:
+      description: Error técnico sin detalles sensibles
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/ApiError' }
+  schemas:
+    TemporalStatus:
+      type: string
+      enum: [OPEN, UPCOMING, CLOSED, TO_CONFIRM]
+    Modality:
+      type: string
+      enum: [ON_SITE, ONLINE, HYBRID, UNKNOWN]
+    Coverage:
+      type: string
+      enum: [FULL, PARTIAL, UNKNOWN]
+    DatePrecision:
+      type: string
+      enum: [DATE_ONLY, DATETIME, UNKNOWN]
+    InstitutionSummary:
+      type: object
+      required: [name, websiteUrl]
+      properties:
+        name: { type: string }
+        websiteUrl: { type: string, format: uri, nullable: true }
+    ScholarshipDates:
+      type: object
+      required: [startDate, deadline, originalDeadlineText, precision, timeZone]
+      properties:
+        startDate: { type: string, format: date, nullable: true }
+        deadline: { type: string, format: date-time, nullable: true, description: Solo si hora/zona publicada y verificable; en caso contrario null y usar texto original }
+        originalDeadlineText: { type: string, nullable: true }
+        precision: { $ref: '#/components/schemas/DatePrecision' }
+        timeZone: { type: string, nullable: true, description: Zona IANA solo si confirmada }
+    ScholarshipCard:
+      type: object
+      required: [id, slug, title, summary, programName, editionKey, institution, levels, areas, destinationCountries, modality, coverage, temporalStatus, dates, lastVerifiedAt]
+      properties:
+        id: { type: string }
+        slug: { type: string }
+        title: { type: string }
+        summary: { type: string }
+        programName: { type: string }
+        editionKey: { type: string }
+        institution: { $ref: '#/components/schemas/InstitutionSummary' }
+        levels: { type: array, items: { type: string } }
+        areas: { type: array, items: { type: string } }
+        destinationCountries: { type: array, items: { type: string, minLength: 2, maxLength: 2 } }
+        modality: { $ref: '#/components/schemas/Modality' }
+        coverage: { $ref: '#/components/schemas/Coverage' }
+        temporalStatus: { $ref: '#/components/schemas/TemporalStatus' }
+        dates: { $ref: '#/components/schemas/ScholarshipDates' }
+        lastVerifiedAt: { type: string, format: date-time, nullable: true }
+    PaginationMeta:
+      type: object
+      required: [page, limit, total, totalPages, hasNextPage]
+      properties:
+        page: { type: integer, minimum: 1 }
+        limit: { type: integer, minimum: 1 }
+        total: { type: integer, minimum: 0 }
+        totalPages: { type: integer, minimum: 0 }
+        hasNextPage: { type: boolean }
+    AppliedFilters:
+      type: object
+      required: [q, level, area, country, modality, coverage, status]
+      properties:
+        q: { type: string, nullable: true }
+        level: { type: string, nullable: true }
+        area: { type: string, nullable: true }
+        country: { type: string, nullable: true }
+        modality: { $ref: '#/components/schemas/NullableModality' }
+        coverage: { $ref: '#/components/schemas/NullableCoverage' }
+        status: { $ref: '#/components/schemas/NullableTemporalStatus' }
+    NullableModality: { type: string, nullable: true, enum: [ON_SITE, ONLINE, HYBRID, UNKNOWN] }
+    NullableCoverage: { type: string, nullable: true, enum: [FULL, PARTIAL, UNKNOWN] }
+    NullableTemporalStatus: { type: string, nullable: true, enum: [OPEN, UPCOMING, CLOSED, TO_CONFIRM] }
+    ScholarshipSearchResponse:
+      type: object
+      required: [data, meta, filters]
+      properties:
+        data: { type: array, items: { $ref: '#/components/schemas/ScholarshipCard' } }
+        meta: { $ref: '#/components/schemas/PaginationMeta' }
+        filters: { $ref: '#/components/schemas/AppliedFilters' }
+    Evidence:
+      type: object
+      required: [sourceUrl, excerpt, pageNumber]
+      properties:
+        sourceUrl: { type: string, format: uri }
+        excerpt: { type: string, nullable: true }
+        pageNumber: { type: integer, nullable: true, minimum: 1 }
+    Requirement:
+      type: object
+      required: [label, required, evidence]
+      properties:
+        label: { type: string }
+        required: { type: boolean, nullable: true }
+        evidence: { $ref: '#/components/schemas/NullableEvidence' }
+    NullableEvidence:
+      allOf: [ { $ref: '#/components/schemas/Evidence' } ]
+      nullable: true
+    Benefit:
+      type: object
+      required: [description, amount, currency, evidence]
+      properties:
+        description: { type: string }
+        amount: { type: number, nullable: true }
+        currency: { type: string, nullable: true }
+        evidence: { $ref: '#/components/schemas/NullableEvidence' }
+    ApplicationChannel:
+      type: object
+      required: [type, purpose, verificationStatus, urlOrEmail, verifiedAt, evidence]
+      description: >-
+        API devuelve urlOrEmail solo cuando purpose=APPLY y verificationStatus=VERIFIED;
+        en otros casos debe ser null. Un contacto no se considera vía de postulación.
+      properties:
+        type: { type: string, enum: [FORM_URL, PORTAL_URL, EMAIL] }
+        purpose: { type: string, enum: [APPLY, CONTACT] }
+        verificationStatus: { type: string, enum: [PENDING, VERIFIED, INVALID, STALE] }
+        urlOrEmail: { type: string, nullable: true }
+        verifiedAt: { type: string, format: date-time, nullable: true }
+        evidence: { $ref: '#/components/schemas/NullableEvidence' }
+    ScholarshipDetail:
+      allOf:
+        - { $ref: '#/components/schemas/ScholarshipCard' }
+        - type: object
+          required: [requirements, requiredDocuments, benefits, applicationChannels, sourceOriginalUrl, sourceTitle]
+          properties:
+            requirements: { type: array, items: { $ref: '#/components/schemas/Requirement' } }
+            requiredDocuments: { type: array, items: { $ref: '#/components/schemas/Requirement' } }
+            benefits: { type: array, items: { $ref: '#/components/schemas/Benefit' } }
+            applicationChannels: { type: array, items: { $ref: '#/components/schemas/ApplicationChannel' } }
+            sourceOriginalUrl: { type: string, format: uri }
+            sourceTitle: { type: string, nullable: true }
+    FilterOption:
+      type: object
+      required: [value, label]
+      properties:
+        value: { type: string }
+        label: { type: string }
+    FilterCatalogResponse:
+      type: object
+      required: [levels, areas, countries, modalities, coverages, statuses]
+      properties:
+        levels: { type: array, items: { $ref: '#/components/schemas/FilterOption' } }
+        areas: { type: array, items: { $ref: '#/components/schemas/FilterOption' } }
+        countries: { type: array, items: { $ref: '#/components/schemas/FilterOption' } }
+        modalities: { type: array, items: { $ref: '#/components/schemas/FilterOption' } }
+        coverages: { type: array, items: { $ref: '#/components/schemas/FilterOption' } }
+        statuses: { type: array, items: { $ref: '#/components/schemas/FilterOption' } }
+    ApiError:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: object
+          required: [code, message]
+          properties:
+            code: { type: string }
+            message: { type: string }
+            requestId: { type: string, nullable: true }

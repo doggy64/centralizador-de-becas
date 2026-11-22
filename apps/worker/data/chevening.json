@@ -1,0 +1,23 @@
+{
+  "institution": {
+    "key": "chevening",
+    "name": "Chevening",
+    "websiteUrl": "https://www.chevening.org"
+  },
+  "program": {
+    "key": "becas-chevening",
+    "name": "Becas Chevening"
+  },
+  "editionKey": "2027-2028",
+  "slug": "chevening-2027-2028",
+  "title": "Chevening para Bolivia 2027–2028",
+  "summary": "Becas del Gobierno británico para cursar una maestría en el Reino Unido. La fuente indica que las postulaciones para esta edición han cerrado.",
+  "sourceUrl": "https://www.chevening.org/scholarship/bolivia/",
+  "evidence": {
+    "sourceUrl": "https://www.chevening.org/scholarship/bolivia/",
+    "excerpt": "Applications for 2027-2028 Chevening Scholarships are now closed.",
+    "pageNumber": null
+  },
+  "levels": ["MASTER"],
+  "countries": ["GB"]
+}

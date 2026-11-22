@@ -1,0 +1,7 @@
+[Unit]
+Description=Respaldo diario del catálogo de becas
+[Timer]
+OnCalendar=*-*-* 02:00:00 UTC
+Persistent=true
+[Install]
+WantedBy=timers.target

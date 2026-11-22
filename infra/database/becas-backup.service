@@ -1,0 +1,10 @@
+[Unit]
+Description=Respaldo PostgreSQL del catálogo de becas
+[Service]
+Type=oneshot
+User=becas-backup
+EnvironmentFile=/etc/becas/backup.env
+WorkingDirectory=/opt/becas
+ExecStart=/usr/bin/node /opt/becas/infra/database/backup.mjs backup
+UMask=0077
+NoNewPrivileges=true
