@@ -6,6 +6,7 @@ test('MVP-015 presenta condiciones clave de una edición desde su URL', async ({
   await expect(page.getByText('Institución ficticia de pruebas', { exact: true })).toBeVisible();
   const facts = page.locator('.detail-facts').first();
   await expect(facts).toContainText('Programa de prueba');
+  await expect(facts).toContainText('Edición vigente');
   await expect(facts).toContainText('2027-a');
   await expect(facts).toContainText('Maestría');
   await expect(facts).toContainText('Bolivia');
@@ -33,5 +34,12 @@ test('MVP-015 muestra una ausencia como no especificada', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Requisitos de elegibilidad' }).locator('..')).toContainText('No especificado.');
   await expect(page.getByRole('heading', { name: 'Documentos requeridos' }).locator('..')).toContainText('No especificado.');
   await expect(page.getByRole('heading', { name: 'Beneficios y costos' }).locator('..')).toContainText('No especificado.');
-  await expect(page.getByText('Pendiente de verificación')).toHaveCount(2);
+  await expect(page.getByText('Pendiente de verificación').first()).toBeVisible();
+  await expect(page.getByRole('complementary', { name: 'Información pendiente de verificación' })).toBeVisible();
+});
+
+test('MVP-025 identifica una edición cerrada sin marcarla como abierta', async ({ page }) => {
+  await page.goto('/becas/demo-historia-cerrada');
+  await expect(page.getByText('Cerrada', { exact: true })).toBeVisible();
+  await expect(page.getByText('Abierta', { exact: true })).toHaveCount(0);
 });

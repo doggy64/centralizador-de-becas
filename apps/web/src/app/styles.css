@@ -34,6 +34,7 @@ button, .button { background: #195447; color: white; border: 0; cursor: pointer;
 .status[data-status="OPEN"] { background: #d9eddf; color: #1c503c; }
 .status[data-status="UPCOMING"] { background: #dae9f2; color: #234c64; }
 .status[data-status="TO_CONFIRM"] { background: #f5e6c8; color: #624820; }
+.status[data-status="CLOSED"] { background: #f1dddd; color: #742c2c; }
 :focus-visible { outline: 3px solid #96601b; outline-offset: 3px; }
 .skip { position: absolute; top: -5rem; padding: .65rem; background: white; }
 .skip:focus { top: 0; }
@@ -48,6 +49,8 @@ button, .button { background: #195447; color: white; border: 0; cursor: pointer;
 .detail-section li { margin-block: .6rem; line-height: 1.5; }
 .application-action { margin-top: 2.5rem; max-width: 42rem; padding: 1.5rem; border-left: .35rem solid #cda44f; background: #fffdf7; }
 .application-action h2 { font-size: 1.5rem; }
+.verification-notice { max-width: 42rem; margin-block: 1.5rem; padding: 1rem 1.25rem; border-left: .35rem solid #cda44f; background: #fff5dc; }
+.verification-notice p { margin-bottom: 0; }
 .pagination { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 2rem; }
 .pagination [aria-disabled="true"] { color: #687e70; }
 .skeleton-card { height: 7rem; margin-block: 1rem; border-radius: .6rem; background: linear-gradient(90deg, #e8e8e1, #f5f3eb, #e8e8e1); background-size: 200% 100%; animation: loading 1.4s ease infinite; }
