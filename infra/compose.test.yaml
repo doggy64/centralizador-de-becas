@@ -1,20 +1,5 @@
 name: becas
 services:
-  db:
-    image: postgres:17.11
-    environment:
-      POSTGRES_USER: becas
-      POSTGRES_DB: becas
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Configure POSTGRES_PASSWORD}
-    ports:
-      - "127.0.0.1:5433:5432"
-    volumes:
-      - dev-data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD", "pg_isready", "-U", "becas", "-d", "becas"]
-      interval: 5s
-      timeout: 3s
-      retries: 10
   db-test:
     image: postgres:17.11
     environment:
@@ -30,5 +15,3 @@ services:
       interval: 5s
       timeout: 3s
       retries: 10
-volumes:
-  dev-data:

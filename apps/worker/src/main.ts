@@ -33,6 +33,8 @@ async function main() {
   if (!arg && action !== "pilot") throw new Error("Falta argumento");
   if (values["dry-run"] && action !== "import" && action !== "pilot")
     throw new Error("Dry-run solo para importación");
+  if (process.env.WORKER_DATABASE_URL)
+    process.env.DATABASE_URL = process.env.WORKER_DATABASE_URL;
   const db = new PrismaClient();
   try {
     if (action === "import" || action === "pilot") {

@@ -10,6 +10,8 @@ if (
 )
   throw Error("Se requiere TEST_DATABASE_URL local con base *_test");
 process.env.DATABASE_URL = url;
+process.env.API_DATABASE_URL = url;
+process.env.WORKER_DATABASE_URL = url;
 function run(args) {
   const result = spawnSync(process.execPath, args, {
     stdio: "inherit",
