@@ -4,7 +4,7 @@
 
 **Contrato API base:** pendiente de aprobación en PR bootstrap.  
 **Entorno:** Next.js autónomo en `apps/web` con el mock HTTP de desarrollo. El monorepo sigue pendiente.
-**Fase actual:** S1.  
+**Fase actual:** S2, avance frontend autorizado contra mock.
 **Integración:** pendiente de revisión cruzada y ejecución contra la API real.
 
 | Fecha | Historia | Fase | Estado | Rutas tocadas | Pruebas | Dependencia API | PR |
@@ -20,6 +20,8 @@
 - Por indicación del responsable del proyecto, DEV 1 continúa S1 contra el mock antes de integrar el baseline. Las dependencias directas de la web se fijan localmente en `apps/web/package.json`.
 
 ## Evidencia de aceptación frontend
+
+MVP-003 agrega destino y nivel con etiquetas del catálogo HTTP y plazo original con ausencia explícita. Verificación del 22 de noviembre con lint, typecheck, build, 3 pruebas HTTP/parámetros y 10 pruebas Playwright aprobadas. Capturas en `evidencia/MVP-003/`. La consulta del remoto sigue mostrando develop en d75ae91, sin entregas de DEV 2. Se continúa por indicación del usuario, con aceptación editorial e integración real pendientes. La rama `feat/dev1/s2-MVP-003-catalogo` depende de los PR #1 y #2.
 
 La prueba de MVP-001 recorrió inicio, catálogo y ficha con un navegador nuevo, abrió el destino externo sintético y comprobó la ausencia del enlace ante un canal pendiente. La primera corrida agotó la espera de cinco segundos al cargar la ficha en escritorio. Con la espera de compilación ajustada, la suite completa pasó en ambos tamaños. Capturas de la ficha en [360 px](evidencia/MVP-001/mobile.png) y [1280 px](evidencia/MVP-001/desktop.png).
 
