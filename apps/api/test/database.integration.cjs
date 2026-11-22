@@ -306,3 +306,105 @@ test("correo de postulación requiere designación literal y pierde vigencia", a
       .urlOrEmail,
   ).toBeNull();
 });
+
+test("una petición publica HTML con bases PDF y reutiliza la extracción", async () => {
+  const { processNext, runSearch } = require("../../worker/dist/search");
+  const { execFileSync } = require("node:child_process");
+  const host = randomUUID() + ".example.org";
+  const url = "https://" + host + "/";
+  const token = randomUUID();
+  process.env.SEARCH_ADMIN_TOKEN = token;
+  process.env.SEARCH_PUBLISH_HOSTS = host;
+  const headers = { Authorization: "Bearer " + token };
+  const query = {
+    query: "becas de maestría para postulantes de Bolivia",
+    publish: true,
+  };
+  await db.source.create({
+    data: {
+      host,
+      title: "Universidad QA",
+      officialUrl: url,
+      approved: true,
+      crawlAllowed: true,
+      policyNote: "Fixture de integración",
+    },
+  });
+  const pdf = execFileSync(process.env.PYTHON_BIN || "python", [
+    "-c",
+    "import sys,pymupdf;d=pymupdf.open();d.new_page();p=d.new_page();p.insert_text((50,50),'Cierre: 2099-06-30');sys.stdout.buffer.write(d.tobytes())",
+  ]);
+  const html = Buffer.from(
+    '<main><h1>Beca Futuro 2099</h1><p>Convocatoria de maestría para ciudadanos de Bolivia.</p><p>Elegibilidad: ciudadanos de Bolivia</p><p>Beneficio: matrícula completa</p><a href="/bases.pdf">Bases</a><a href="/bases.pdf">PDF</a><a href="/aplicar">Postular</a></main>',
+  );
+  const get = jest.fn(async (raw, allowed, _get, _delay, conditional) => {
+    if (!allowed.has(host) || !raw.startsWith(url))
+      throw Error("Fuente fuera de la prueba");
+    const isPdf = raw.endsWith(".pdf");
+    return {
+      url: raw,
+      status: conditional?.headers["If-None-Match"] === "v1" ? 304 : 200,
+      etag: "v1",
+      mime: isPdf ? "application/pdf" : "text/html",
+      body: isPdf ? pdf : html,
+    };
+  });
+  const route = "/admin/busquedas";
+  await api.post(route).send(query).expect(401);
+  const run = async () => {
+    const id = randomUUID();
+    for (let i = 0; i < 2; i++)
+      await api
+        .post(route)
+        .set(headers)
+        .set("Idempotency-Key", id)
+        .send(query)
+        .expect(202);
+    await api
+      .post(route)
+      .set(headers)
+      .set("Idempotency-Key", id)
+      .send({ ...query, publish: false })
+      .expect(409);
+    await processNext(db, (client, job) =>
+      runSearch(
+        client,
+        job,
+        get,
+        async (slug) =>
+          (await api.get("/api/v1/scholarships/" + slug)).status === 200,
+      ),
+    );
+    return (
+      await api
+        .get(route + "/" + id)
+        .set(headers)
+        .expect(200)
+    ).body.report;
+  };
+  try {
+    const first = await run();
+    const entry = first.results.find((r) => r.url === url);
+    expect(entry).toMatchObject({ status: "PUBLISHED" });
+    expect(
+      get.mock.calls.filter(([u]) => u === url + "bases.pdf"),
+    ).toHaveLength(1);
+    const detail = (
+      await api.get("/api/v1/scholarships/" + entry.slug).expect(200)
+    ).body;
+    conforms("/api/v1/scholarships/{slug}", detail);
+    expect(
+      await db.evidence.count({
+        where: { url: url + "bases.pdf", pageNumber: 2 },
+      }),
+    ).toBeGreaterThan(0);
+    const second = await run();
+    expect(second.documents.parsed).toBe(0);
+    expect(second.documents.reused).toBeGreaterThanOrEqual(2);
+    expect(await db.scholarship.count({ where: { sourceUrl: url } })).toBe(1);
+  } finally {
+    await db.source.update({ where: { host }, data: { crawlAllowed: false } });
+    delete process.env.SEARCH_ADMIN_TOKEN;
+    delete process.env.SEARCH_PUBLISH_HOSTS;
+  }
+}, 60000);

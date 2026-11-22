@@ -197,3 +197,22 @@ model IngestionRun {
 
   @@index([host, startedAt])
 }
+
+model SearchJob {
+  id        String   @id
+  query     String
+  publish   Boolean  @default(false)
+  status    String   @default("QUEUED")
+  report    Json     @default("{}")
+  createdAt DateTime @default(now()) @db.Timestamptz(6)
+
+  @@index([status, createdAt])
+}
+
+model SearchDocument {
+  url      String @id
+  hash     String
+  payload  Json
+  etag     String?
+  modified String?
+}

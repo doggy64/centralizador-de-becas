@@ -49,8 +49,8 @@ export function extractPdf(bytes: Buffer) {
     [path.join(__dirname, "../scripts/extract_pdf.py")],
     {
       input: bytes,
-      timeout: 20000,
-      maxBuffer: 1024 * 1024,
+      timeout: 90000,
+      maxBuffer: 8 * 1024 * 1024,
       encoding: "utf8",
       windowsHide: true,
     },
@@ -59,7 +59,13 @@ export function extractPdf(bytes: Buffer) {
     throw new Error("PDF ilegible o motor PyMuPDF no disponible");
   return z
     .array(
-      z.object({ text: z.string(), pageNumber: z.number().int().positive() }),
+      z.object({
+        text: z.string(),
+        pageNumber: z.number().int().positive(),
+        links: z
+          .array(z.object({ url: z.string(), label: z.string() }))
+          .optional(),
+      }),
     )
     .parse(JSON.parse(result.stdout));
 }
@@ -94,7 +100,7 @@ export async function ingest(
     if (res.mime === "application/pdf") {
       const pages = extractPdf(res.body);
       title = config.program.name;
-      summary = pages[0]?.text ?? "";
+      summary = pages[0]?.text.slice(0, 2000) ?? "";
       pageNumber = pages[0]?.pageNumber ?? null;
     } else {
       ({ title, summary, pageNumber } = extractHtml(res.body, res.url));

@@ -19,8 +19,14 @@ type ResponseData = {
   status: number;
   mime: string;
   location?: string;
+  etag?: string;
+  modified?: string;
 };
-export async function pinnedGet(url: URL, max: number): Promise<ResponseData> {
+export async function pinnedGet(
+  url: URL,
+  max: number,
+  headers: Record<string, string> = {},
+): Promise<ResponseData> {
   const records = await lookup(url.hostname, { all: true });
   if (!records.length || records.some((r) => !isPublic(r.address)))
     throw new Error("DNS fuera de rangos públicos");
@@ -34,7 +40,11 @@ export async function pinnedGet(url: URL, max: number): Promise<ResponseData> {
         family: dest.family,
         lookup: (_host, _options, done) =>
           done(null, dest.address, dest.family),
-        headers: { "User-Agent": agentName, "Accept-Encoding": "identity" },
+        headers: {
+          ...headers,
+          "User-Agent": agentName,
+          "Accept-Encoding": "identity",
+        },
       },
       (res) => {
         const chunks: Buffer[] = [];
@@ -57,6 +67,8 @@ export async function pinnedGet(url: URL, max: number): Promise<ResponseData> {
               .trim()
               .toLowerCase(),
             location: res.headers.location,
+            etag: res.headers.etag,
+            modified: res.headers["last-modified"],
           }),
         );
       },
@@ -70,11 +82,26 @@ export async function pinnedGet(url: URL, max: number): Promise<ResponseData> {
     req.end();
   });
 }
+export function jobFetcher(): typeof fetchOfficial {
+  const policies = new Map<string, { until: number; response: ResponseData }>();
+  const read: typeof pinnedGet = async (url, max, headers) => {
+    if (url.pathname !== "/robots.txt" || max !== 256000)
+      return pinnedGet(url, max, headers);
+    const cached = policies.get(url.href);
+    if (cached && Date.now() < cached.until) return cached.response;
+    const response = await pinnedGet(url, max, headers);
+    policies.set(url.href, { until: Date.now() + 300000, response });
+    return response;
+  };
+  return (raw, allowed, get = read, pause, conditional) =>
+    fetchOfficial(raw, allowed, get, pause, conditional);
+}
 export async function fetchOfficial(
   raw: string,
   allowed: Set<string>,
   get = pinnedGet,
   pause = delay,
+  conditional?: { url: string; headers: Record<string, string> },
 ) {
   let url = new URL(raw);
   for (let hop = 0; hop < 4; hop++) {
@@ -96,7 +123,11 @@ export async function fetchOfficial(
     if (wait > 60000)
       throw new Error("Demora de la fuente requiere planificación manual");
     await pause(wait);
-    const response = await get(url, 5 * 1024 * 1024);
+    const validators =
+      conditional?.url === url.href ? conditional.headers : undefined;
+    const response = await get(url, 5 * 1024 * 1024, validators);
+    if (response.status === 304 && validators && Object.keys(validators).length)
+      return { ...response, url: url.href };
     if (
       [301, 302, 303, 307, 308].includes(response.status) &&
       response.location

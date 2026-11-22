@@ -2,6 +2,7 @@ import { parseArgs } from "node:util";
 import path from "node:path";
 import { readFile } from "node:fs/promises";
 import { PrismaClient } from "@prisma/client";
+import { serveSearch } from "./search";
 import { discover, ingest } from "./extract";
 import { httpsUrl } from "./candidate";
 import { importCandidate, review, verifyChannel } from "./editorial";
@@ -23,21 +24,23 @@ async function main() {
   }
   if (values.help || !positionals.length) {
     console.log(
-      "pilot | discover URL | ingest URL IDENTIDAD.json | source URL manual/crawl/disable | import ARCHIVO | inspect SLUG | submit/publish/reject/recheck/retire SLUG | channel ID VERIFIED/INVALID/STALE. Use --actor y --note para revisión.",
+      "serve | pilot | discover URL | ingest URL IDENTIDAD.json | source URL manual/crawl/disable | import ARCHIVO | inspect SLUG | submit/publish/reject/recheck/retire SLUG | channel ID VERIFIED/INVALID/STALE. Use --actor y --note para revisión.",
     );
     return;
   }
   const [action, arg, decision] = positionals;
   const actor = values.actor ?? "";
   const note = values.note ?? "";
-  if (!arg && action !== "pilot") throw new Error("Falta argumento");
+  if (!arg && action !== "pilot" && action !== "serve")
+    throw new Error("Falta argumento");
   if (values["dry-run"] && action !== "import" && action !== "pilot")
     throw new Error("Dry-run solo para importación");
   if (process.env.WORKER_DATABASE_URL)
     process.env.DATABASE_URL = process.env.WORKER_DATABASE_URL;
   const db = new PrismaClient();
   try {
-    if (action === "import" || action === "pilot") {
+    if (action === "serve") await serveSearch(db);
+    else if (action === "import" || action === "pilot") {
       const files =
         action === "pilot"
           ? ["chevening", "oea", "university-college"].map((name) =>
