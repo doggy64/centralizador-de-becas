@@ -3,6 +3,7 @@ import SearchForm from '../../components/SearchForm';
 import TemporalStatus from '../../components/TemporalStatus';
 import Pagination from '../../components/Pagination';
 import FiltersForm from '../../components/FiltersForm';
+import ActiveFilters from '../../components/ActiveFilters';
 import { getCatalogFilters, searchScholarships, type SearchParams } from '../../lib/api/scholarships';
 import { ScholarshipApiError } from '../../lib/api/client';
 
@@ -19,6 +20,7 @@ export default async function Catalog({ searchParams }: { searchParams: Promise<
   }
   return <><h1>Catálogo de becas</h1><SearchForm query={query} />
     <FiltersForm catalogs={catalogs} filters={params} />
+    <ActiveFilters catalogs={catalogs} filters={params} />
     <p role="status">Convocatorias encontradas — {results.meta.total}{results.filters.q ? ` para «${results.filters.q}»` : ''}</p>
     {results.data.length ? <><ul className="cards">{results.data.map(item =>
       <li key={item.id}><p>{item.institution.name}</p>
@@ -34,6 +36,6 @@ export default async function Catalog({ searchParams }: { searchParams: Promise<
         </dl>
         <TemporalStatus status={item.temporalStatus} /></li>)}</ul>
       <Pagination page={results.meta.page} totalPages={results.meta.totalPages} hasNextPage={results.meta.hasNextPage} filters={params} /></> :
-      <p>No encontramos becas para esta búsqueda. <Link href="/becas">Ver todas las becas</Link></p>}
+      <section aria-labelledby="sin-resultados"><h2 id="sin-resultados">No encontramos becas</h2><p>Prueba modificar el término o eliminar alguno de los filtros aplicados.</p><Link href="/becas">Limpiar filtros y ver todas las becas</Link></section>}
   </>;
 }
