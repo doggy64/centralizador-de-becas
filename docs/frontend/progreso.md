@@ -21,6 +21,8 @@
 
 ## Evidencia de aceptación frontend
 
+MVP-016 y MVP-017 muestran requisitos y documentos en secciones legibles. Cada ausencia llega como «No especificado» sin inferir condiciones de postulación. Lint y typecheck pasaron. Las cuatro pruebas Playwright de la ficha pasaron en escritorio y móvil. Rama `feat/dev1/s3-MVP-016-017-requisitos-documentos`.
+
 MVP-005, MVP-012 y MVP-013 añaden vigencia desde el estado API, filtros combinables, controles para quitar cada criterio, limpieza de la URL y un estado vacío recuperable. Lint y typecheck pasaron. Las cuatro pruebas Playwright dedicadas pasaron en escritorio y móvil. Rama `feat/dev1/s3-MVP-005-012-013-filtros-activos`.
 
 MVP-007 a MVP-011 incorporan filtros individuales por nivel, área, país de destino, modalidad y cobertura. Los valores provienen de los catálogos de la API. La URL conserva el término de búsqueda y descarta parámetros vacíos. Lint, typecheck y build pasaron. Las 12 pruebas Playwright específicas pasaron en escritorio y móvil.

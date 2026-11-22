@@ -43,6 +43,9 @@ button, .button { background: #195447; color: white; border: 0; cursor: pointer;
 .detail-facts { display: grid; grid-template-columns: minmax(10rem, auto) 1fr; gap: .65rem 1.5rem; max-width: 42rem; padding: 1.25rem; border-block: 1px solid #ccd7c9; }
 .detail-facts dt { font-weight: 650; }
 .detail-facts dd { margin: 0; }
+.detail-section { margin-top: 2.5rem; max-width: 42rem; }
+.detail-section h2 { font-size: 1.5rem; }
+.detail-section li { margin-block: .6rem; line-height: 1.5; }
 .pagination { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 2rem; }
 .pagination [aria-disabled="true"] { color: #687e70; }
 .skeleton-card { height: 7rem; margin-block: 1rem; border-radius: .6rem; background: linear-gradient(90deg, #e8e8e1, #f5f3eb, #e8e8e1); background-size: 200% 100%; animation: loading 1.4s ease infinite; }
